@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_landscape"
+     android:id="@+id/linearLayout0"
+    >
+    
+     <!-- Title TextView-->
+    <FrameLayout android:layout_height="wrap_content" 
+    	android:id="@+id/frameLayout1" 
+    	android:layout_width="fill_parent" 
+    	android:background="#8000">
+    	
+		    <LinearLayout style="@style/TitleBar">
+		        <ImageView style="@style/TitleBarLogo"
+		            android:id="@+id/vbtHome"
+		            android:contentDescription="@string/start_header" 
+		            android:src="@drawable/eastericon_grey" /> <!-- title_logo --> <!-- description_logo" -->
+		
+		        <ImageView style="@style/TitleBarSeparator" />
+		        
+		 		<TextView style="@style/TitleBarText"
+			    	android:id="@+id/aboutHeader" 
+			    	android:text="@string/hello" />
+		    	
+		        <View style="@style/TitleBarSpring" />
+		        
+		        <ImageView style="@style/TitleBarSeparator" />
+		
+		        <ImageView style="@style/TitleBarLogo"
+		            android:id="@+id/vbtActionBarNext"
+		            android:src="@drawable/ic_media_play" /> 
+		
+		    </LinearLayout>
+	
+    	
+    	
+		<!-- TextView  
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" android:gravity="center"
+		    android:textSize="30sp"
+		    android:layout_margin="10dp" android:text="@string/hello"
+		    android:textStyle="bold"
+		    / -->
+	</FrameLayout>    
+
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    >
+		<ListView android:layout_height="match_parent" 
+			android:layout_weight="1" 
+			android:id="@android:id/list" 
+			android:layout_width="fill_parent"
+			android:background="#8000"
+			android:cacheColorHint="#00000000" />
+			
+			
+		<LinearLayout 
+			android:id="@+id/linearLayout1" 
+		    android:orientation="vertical"
+			android:layout_height="match_parent" 
+			android:layout_width="wrap_content" 
+			android:gravity="center"
+		    android:background="#fff">
+			
+			<ImageView 
+				android:src="@drawable/logga" 
+				android:layout_height="wrap_content"
+				android:id="@+id/imageView1" 
+				android:gravity="center"
+				android:layout_width="wrap_content"></ImageView>
+				
+			<TextView android:text="@string/reklmatext2" 
+				android:id="@+id/textView3" 
+				android:layout_width="fill_parent"
+				android:gravity="center"
+			    android:textSize="20sp"
+			    android:textColor="#000"
+			    android:layout_margin="10dp" android:layout_height="match_parent"></TextView>
+		</LinearLayout>
+	</LinearLayout>
+	
+	
+</LinearLayout>

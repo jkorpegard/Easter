@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+    
+    
+		    <LinearLayout style="@style/TitleBar">
+		        <ImageView style="@style/TitleBarLogo"
+		            android:id="@+id/vbtHome"
+		            android:contentDescription="@string/start_header" 
+		            android:src="@drawable/eastericon_grey" /> <!-- title_logo --> <!-- description_logo" -->
+		
+		        <ImageView style="@style/TitleBarSeparator" />
+		        
+		 		<TextView style="@style/TitleBarText"
+		    	android:id="@+id/aboutHeader" 
+		    	android:text="@string/set_date_header" />
+    	
+		        <View style="@style/TitleBarSpring" />
+		        
+		        <ImageView style="@style/TitleBarSeparator" />
+		
+		        <ImageView style="@style/TitleBarLogo"
+		            android:id="@+id/vbtActionBarNext"
+		            android:src="@drawable/ic_media_play" /> 
+
+		    </LinearLayout>
+    
+    
+    
+<LinearLayout
+	android:layout_weight="1" 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView android:text="@string/set_date_text" 
+    	android:layout_height="wrap_content" 
+    	android:id="@+id/textView1" 
+	    android:textSize="18sp"
+    	android:layout_width="wrap_content"/>
+    <TextView android:id="@+id/dateDisplay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+	    android:textSize="30sp"
+        android:text="2011-11-11"/>
+        
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal">
+		    <Button android:id="@+id/pickDate"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" android:text="@string/change_the_date_btn"/>
+		    <ImageView 			
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+		    	android:layout_weight="1" />
+		    
+		    <Button android:text="@string/set_date_button_next" 
+		    	android:layout_width="wrap_content" 
+		    	android:id="@+id/set_date_next" 
+		    	android:layout_height="wrap_content"/>
+		</LinearLayout>
+
+</LinearLayout>
+
+
+<LinearLayout 
+	android:id="@+id/linearLayout1" 
+	android:layout_height="wrap_content" 
+	android:layout_width="match_parent" 
+	android:gravity="center"
+    android:background="#fff">
+	
+<ImageView 
+	android:src="@drawable/logga_s" 
+	android:layout_height="wrap_content"
+	android:id="@+id/imageView2" 
+	android:gravity="center"
+	android:layout_width="wrap_content"></ImageView>
+	
+<TextView android:text="@string/reklmatext2" 
+	android:layout_height="wrap_content" 
+	android:id="@+id/textView3" 
+	android:layout_width="fill_parent"
+	android:gravity="center"
+    android:textSize="20sp"
+    android:textColor="#000"
+    android:layout_margin="10dp"></TextView>
+</LinearLayout>
+</LinearLayout>

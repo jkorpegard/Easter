@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Påsken med Jesus</string>
+    <string name="app_name">Lev med Jesus</string> 
+    <string name="titlePrefs">Inställningar</string> 
+    <string name="prefsMenuTitle">Inst.</string> 
+    <string name="menuResetDB">Reset DB</string> 
+    <string name="menuCleanDB">Rensa läst-flagga</string> 
+    <string name="titleViewBibleTextActivity">Bibeltext</string> 
+    <string name="titleEaster">Påsk med Jesus</string> 
+    <string name="reklmatext1"><a href="http://www.hcjb.se/index.php?id=6">Om HCJB Global</a></string> 
+    <string name="reklmatext2"><a href="http://www.hcjb.se/index.php?id=12">HCJB Global Sverige</a></string> 
+    <string name="reklmatext3"><a href="http://www.hcjb.se/">HCJB Global</a></string> 
+    <string name="reklmatext4"><a href="http://www.hcjb.se/index.php?id=26">Vad är HCJB Global?</a></string> 
+    <string name="reklmatext5"><a href="http://www.hcjb.se/index.php?id=28">Lyssna på HCJB Global</a></string> 
+    <string name="bibleSource">\n\n - Svenska Folkbibeln</string> 
+    <string name="start_easter_button">Starta Påskveckan nu</string> 
+    <string name="continue_easter_button">Fortsätt Påskveckan</string> 
+    <string name="about_hcjb_button">Om HJCB</string> 
+    <string name="instructions_button">Instruktioner</string> 
+    <string name="hcjb_activity_header">Om HCJB Global Sweden</string> 
+    <string name="hcjb_activity_text">HCJB Global Sweden är en förening som verkar för att sprida budskapet om Jesus till alla människor, och är en del av missionsorganisationen HCJB Global.
+    \nLäs mer om <a href="http://www.hcjb.se">HCJB Global Sweden</a>
+    \nLäs mer om <a href="http://www.hcjb.se">HCJB Global</a></string>
+	<string name="about_header">Om Applikationen</string>
+	<string name="about_text">Den här applikationen är ett helt nytt sätt att läsa bibeln. Applikationen är gjord av HCJB Global Sweden.
+	  \n\nNär påskveckan är påbörjad (antingen genom att sätta ett datum för påskdagen manuellt, eller när påskveckan börjar enligt almanackan),
+	  kommer du följa Jesus i realtid från det att han rider in i Jerusalem tills det att lärjungarna återser Jesus efter uppståndelsen på påskdagen.
+	  Bibeltexter från alla fyra evangelierna notifieras och visas under dagarna (och nätterna!) under veckan.
+	  Räkna med att tillbringa en hel del tid med den här applikationen; olika bibeltexter från påskveckan kommer
+	  visas vid mer än hundra tillfällen!
+	  \n\nNär alla bibeltexter är lästa kommer nya funktioner vara tillgängliga på startsidan.
+	  \n\nDen här applikationen är gjord för att visa på Jesu lidande och offer under påskveckan.
+	  \n\nBibeltexterna är hämtade från "Svenska Folkbibeln" (på Svenska) och "The NET Bible" (på Engelska).
+	  \n\nBakgrundsbilden är en målning av N.N., fotograferad och publicerad under "the creative common license" av N.N.
+	  </string>
+	<string name="help_header">Instruktioner för applikationen</string>
+	<string name="help_text">Starta påskveckan genom att klicka på "Starta påskveckan"-knappen. 
+	  Följ Jesus sista veckan innan Jesu död och uppståndelse. 
+	  Efter det att alla texter har visats och är lästa kommer nya funktioner att aktiveras på startsidan</string>
+	<string name="about_app_button">Om applikationen</string>
+	<string name="started_header">Applikationen är aktiverad</string>
+	<string name="started_text">Påskveckan har aktiverats, men ingen text finns att läsa än. Vänta tålmodigt så kommer du bli notifierad när första texten finns att läsa (en vecka före påskdagen).</string>
+	<string name="set_date_header">Datum för Påskdagen</string>
+	<string name="set_date_text">Ställ in datum för påskdagen; förslagsvis nästa söndag:</string>
+	<string name="set_date_button_next">Nästa</string>
+	<string name="start_next_step">Nästa Steg</string>
+	<string name="start_feedback">Feedback</string>
+	<string name="start_header">Påskapplikationen...</string>
+	<string name="start_find_church">Hitta till en kyrka</string>
+	<string name="start_give_button">Ge en gåva till HCJB</string>
+    <string name="next_step_header">Nästa steg</string>
+	<string name="next_step_text">Nu har du levt tillsammans med Jesus en vecka. Vill du följa Jesus hela livet?
+	  \n\nBibeln säger: "Om du därför med din mun bekänner att Jesus är Herren och i ditt hjärta tror att Gud har uppväckt honom från de döda skall du bli frälst." (Rom. 10:9)
+	  \n\nDet är allt du behöver göra för att bli räddad! Klicka på knapparna här nedanför för vägledning i tre steg: 
+	  \n1. Be frälsningsbönen! 
+	  \n2. Hitta en kyrka där du kan dela din tro med andra! 
+	  \n3. Berätta för oss som gjort appen om den har hjälpt dig i din tro på Jesus!</string>
+	<string name="find_church_header">Hitta en kyrka nära dig!</string>
+	<string name="find_church_text">Klicka på någon av länkarna... \n\n<a href="http://www.kyrktorget.se/">Kyrktorget</a>\n<a href="http://www.alliansmissionen.se/">Svenska Alliansmissionen</a>\n<a href="http://www.efk.se/">EFK</a>\n<a href="http://www.svenskakyrkan.se/">Svenska Kyrkan</a></string>
+	<string name="feedback_header">Återkoppling!</string>
+	<string name="feedback_text">Berätta för oss på HCJB Global Sweden om den här appen har hjälpt dig framåt i din relation med Jesus!\n
+		\n<a href="mailto:android@hcjb.se?Subject=Android+app+feedback">Skicka mail till HCJB!</a></string>
+	<string name="alert_last_text_ok">OK!</string>
+	<string name="alert_last_text_text">Nu är alla texter lästa. Nya funktioner är tillgängliga på startsidan.</string>
+	<string name="next_step_btn_pray">Be Frälsningsbönen!</string>
+	<string name="next_step_btn_find_church">Hitta en församling!</string>
+	<string name="next_step_btn_feedback">Berätta för andra!</string>
+	<string name="next_step_salvation_prayer">Be, högt, med egna ord för din frälsning. Orden är inte det viktiga,
+					det som är viktigt är ditt hjärtas längtan efter att ge ditt till Jesus. Om du inte vet
+					hur du ska be så kan be den här bönen;
+					\n\nHerre Jesus, jag vet att jag har syndat. Jag har gjort mycket som Du inte tycker om. Jag har
+					levt mitt liv för min egen skull. Jag ångrar mig och jag ber om din förlåtelse.
+					Jag tror att du har dött på korset för mig, för att rädda mig till ett evigt liv. Du har gjort
+					vad jag inte kunde göra själv. Nu kommer jag inför dig och ber att du ska ta kontrollen över
+					mitt liv. Jag ger mitt liv till dig. Hjälp mig, varje dag, att tjäna dig. Jag älskar dig
+					Jesus, och jag tackar dig för att jag ska få leva tillsammans med dig i evighet. 
+					\n\nAmen. </string>
+	<string name="next_step_popup_ok">OK!</string>
+	<string name="weekday_monday">Måndag</string>
+	<string name="weekday_tuesday">Tisdag</string>
+	<string name="weekday_wednesday">Onsdag</string>
+	<string name="weekday_thursday">Torsdag</string>
+	<string name="weekday_friday">Fredag</string>
+	<string name="weekday_saturday">Lördag</string>
+	<string name="weekday_sunday">Söndag</string>
+	<string name="change_the_date_btn">Ändra datum</string>
+</resources>

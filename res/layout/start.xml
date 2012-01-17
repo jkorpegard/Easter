@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical" android:layout_height="match_parent" android:layout_width="fill_parent"
+   android:background="@drawable/background" android:id="@+id/linearLayout0">
+  
+    	
+    <LinearLayout style="@style/TitleBar">
+        <ImageView style="@style/TitleBarLogo"
+            android:id="@+id/vbtHome"
+            android:contentDescription="@string/start_header" 
+            android:src="@drawable/eastericon_grey" /> <!-- title_logo --> <!-- description_logo" -->
+
+        <ImageView style="@style/TitleBarSeparator" />
+        
+ 		<TextView style="@style/TitleBarText"
+    	android:id="@+id/aboutHeader" 
+    	android:text="@string/start_header" />
+    	
+
+        <View style="@style/TitleBarSpring" />
+        
+        <ImageView style="@style/TitleBarSeparator" />
+
+        <ImageView style="@style/TitleBarLogo"
+            android:id="@+id/vbtActionBarNext"
+            android:src="@drawable/ic_media_play" /> 
+
+        
+    </LinearLayout>
+
+  
+  
+    <LinearLayout 
+	    android:orientation="vertical"
+		android:layout_height="fill_parent" android:id="@+id/linearLayout1"
+		android:layout_width="fill_parent" android:layout_weight="1"
+		android:background="#8000"
+		android:padding="6dip">
+		<LinearLayout 
+			android:orientation="horizontal"
+			android:layout_height="wrap_content" android:id="@+id/linearLayout2"
+			android:layout_width="fill_parent" android:layout_weight="1">
+		    <Button 
+		    	android:id="@+id/button1" android:text="@string/instructions_button"
+		    	android:layout_width="fill_parent"
+		        android:layout_gravity="center_vertical"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:gravity="center_horizontal"
+	            android:drawableTop="@drawable/info_icon"
+	            android:textColor="#ffcccccc"
+	            android:background="@null"
+		    	/>
+		    <Button 
+		    	android:id="@+id/button2" 
+		    	android:text="@string/start_easter_button"
+		    	android:layout_width="fill_parent"
+		        android:layout_gravity="center_vertical"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:gravity="center_horizontal"
+	            android:drawableTop="@drawable/eastericon"
+	            android:textColor="#ffcccccc"
+	            android:background="@null"
+		    	/>
+        </LinearLayout>
+        
+        <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:id="@+id/linearLayout2" android:layout_width="fill_parent" android:layout_weight="1">
+		    <Button 
+		    	android:id="@+id/button3" 
+		    	android:layout_width="fill_parent"
+		        android:layout_gravity="center_vertical"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:gravity="center_horizontal"
+	            android:drawableTop="@drawable/ic_media_play"
+	            android:textColor="#ffcccccc"
+	            android:background="@null"
+		    	android:text="@string/start_next_step"/>
+		    <Button 
+		    	android:id="@+id/button4" 
+		    	android:layout_width="fill_parent"
+		        android:layout_gravity="center_vertical"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:gravity="center_horizontal"
+	            android:drawableTop="@drawable/email_icon"
+	            android:textColor="#ffcccccc"
+	            android:background="@null"
+	            android:text="@string/start_feedback"/>
+        </LinearLayout>
+        
+        <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:id="@+id/linearLayout2" android:layout_width="fill_parent" android:layout_weight="1">
+		    <Button 
+		    	android:id="@+id/button5" 
+		    	android:layout_width="fill_parent"
+		        android:layout_gravity="center_vertical"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:gravity="center_horizontal"
+	            android:drawableTop="@drawable/addressbook_icon"
+	            android:textColor="#ffcccccc"
+	            android:background="@null" android:text="@string/start_find_church"/>
+		    <Button 
+		    	android:id="@+id/button6" android:text="@string/about_hcjb_button"
+		    	android:layout_width="fill_parent"
+		        android:layout_gravity="center_vertical"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:gravity="center_horizontal"
+	            android:drawableTop="@drawable/logga_s"
+	            android:textColor="#ffcccccc"
+	            android:background="@null"
+		    	/>
+        </LinearLayout>
+        
+        <!--  LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:id="@+id/linearLayout2" android:layout_width="fill_parent" android:layout_weight="1">
+		    <Button 
+		    	android:id="@+id/button7" 
+		    	android:layout_width="fill_parent"
+		        android:layout_gravity="center_vertical"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:gravity="center_horizontal"
+	            android:drawableTop="@drawable/hcjb_logo_icon"
+	            android:textColor="#ff355689"
+	            android:background="@null" android:text="@string/start_give_button"/>
+		    <Button 
+		    	android:id="@+id/button8" 
+		    	android:text="@string/about_app_button"
+		    	android:layout_width="fill_parent"
+		        android:layout_gravity="center_vertical"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:gravity="center_horizontal"
+	            android:drawableTop="@drawable/info_icon"
+	            android:textColor="#ff355689"
+	            android:background="@null"
+	            />
+        </LinearLayout  -->
+        
+        
+    </LinearLayout>
+
+	<LinearLayout 
+		android:id="@+id/linearLayout1" 
+		android:layout_height="wrap_content" 
+		android:layout_width="match_parent" 
+		android:gravity="center"
+	    android:background="#fff">
+		
+		<ImageView 
+			android:src="@drawable/logga_s" 
+			android:layout_height="wrap_content"
+			android:id="@+id/imageView2" 
+			android:gravity="center"
+			android:layout_width="wrap_content"></ImageView>
+			
+		<TextView android:text="@string/reklmatext2" 
+			android:layout_height="wrap_content" 
+			android:id="@+id/textView3" 
+			android:layout_width="fill_parent"
+			android:gravity="center"
+		    android:textSize="20sp"
+		    android:textColor="#000"
+		    android:layout_margin="10dp"></TextView>
+	</LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">The Easter with Christ</string>
+    <string name="app_name">Live with Christ</string> 
+    <string name="titlePrefs">Settings</string> 
+    <string name="prefsMenuTitle">Settings</string> 
+    <string name="menuResetDB">Reset DB</string> 
+    <string name="menuCleanDB">Clear read-flag</string> 
+    <string name="titleViewBibleTextActivity">Bible text</string> 
+    <string name="titleEaster">The Easter with Jesus</string> 
+    <string name="reklmatext1"><a href="http://www.hcjb.se/index.php?id=6">About HCJB Global</a></string> 
+    <string name="reklmatext2"><a href="http://www.hcjb.se/index.php?id=12">HCJB Global Sweden</a></string> 
+    <string name="reklmatext3"><a href="http://www.hcjb.se/">HCJB Global</a></string> 
+    <string name="reklmatext4"><a href="http://www.hcjb.se/index.php?id=26">What is HCJB Global?</a></string> 
+    <string name="reklmatext5"><a href="http://www.hcjb.se/index.php?id=28">Listen to HCJB Global</a></string> 
+    <string name="bibleSource">\n\n - Svenska Folkbibeln</string> 
+    <string name="start_easter_button">Start Easter week now</string> 
+    <string name="continue_easter_button">Continue Easter week</string> 
+    <string name="about_hcjb_button">About HJCB</string> 
+    <string name="instructions_button">Instructions</string> 
+    <string name="hcjb_activity_header">About HCJB Global Sweden</string> 
+    <string name="hcjb_activity_text">HCJB Global Sweden is an organization spreading the word about Jesus Christ.
+      The organization is a part of HCJB Global. 
+      \nRead more about <a href="http://www.hcjb.se">HCJB Global Sweden</a>(Swedish only)
+      \nRead more about <a href="http://www.hcjb.org">HCJB Global</a></string>
+	<string name="about_header">About the Application</string>
+	<string name="about_text">This application is a completely new way to read the Bible, created by HCJB Global Sweden.
+	  \n\nWhen the Eastern Week is started (either manually by setting a date, or waiting for the real Eastern week to begins), 
+	  you will follow Christ in real time from when he enters Jerusalem until he meets his followers after the resurrection.
+	  Bible texts from all four gospels are notified during the days (and nights!) until Eastern Day. 
+	  Please expect that you have to spend some time together with this application to follow Christ this week; More
+	  than one hundred bible texts will be notified and displayed!
+	  \n\nOnce all the bible texts are read, additional features are unlocked on the start screen.
+	  \n\nThis application has been made to bring the suffering and sacrifice of Christ to mind during the Eastern week.
+	  \n\nBible texts are from Svenska Folkbibeln (Swedish) and the NET Bible (English).
+	  \n\nThe background image is a painting by XYZ, photographed and made available under the creative common license by QXZ.
+	  </string>
+	<string name="help_header">Help on the application</string>
+	<string name="help_text">Start easter week by clicking on the start button. Follow Christ the last week before his death and resurrection. Additional features will be unlocked when all texts are read.</string>
+	<string name="about_app_button">About the app</string>
+	<string name="started_header">Application has started</string>
+	<string name="started_text">Application has started, but no text has been displayed yet. Please be patient and wait for the next text to come...</string>
+	<string name="set_date_header">Set date...</string>
+	<string name="set_date_text">Please set the date for when Easter day; preferably next coming Sunday.</string>
+	<string name="set_date_button_next">Start easter week!</string>
+	<string name="start_next_step">Next step</string>
+	<string name="start_feedback">Feedback</string>
+	<string name="start_header">Easter Application</string>
+	<string name="start_find_church">Find a church</string>
+	<string name="start_give_button">Support HCJB</string>
+	<string name="next_step_header">Next step...</string>
+	<string name="next_step_text">Now, you have lived one week together with Christ. Do you want to follow Christ for the rest of your life?
+	  \n\nThe Bible tells us that "if you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved. " (Rom. 10:9)
+	  \n\nThat is all you need to do to be saved! Press the buttons below for assistance in the three steps: 
+	  \n1. Pray the salvation prayer! 
+	  \n2. Find a church, and tell others about your faith! 
+	  \n3. Share with us that you have received Christ!</string>
+	<string name="find_church_header">Find a church near you!</string>
+	<string name="find_church_text">Click on one of the links... \n\n<a href="http://www.kyrktorget.se/">Kyrktorget</a>\n<a href="http://www.alliansmissionen.se/">Svenska Alliansmissionen</a>\n<a href="http://www.efk.se/">EFK</a>\n<a href="http://www.svenskakyrkan.se/">Svenska Kyrkan</a></string>
+	<string name="feedback_header">Send Feedback!</string>
+	<string name="feedback_text">Tell us at HCJB Global Sweden if this application has been helpful for you in your relation to Christ.\n
+		\n<a href="mailto:android@hcjb.se?Subject=Android+app+feedback">Send Feedback!</a></string>
+	<string name="alert_last_text_ok">OK!</string>
+	<string name="alert_last_text_text">All texts are now read. New functions have been enabled on the start page.</string>
+	<string name="next_step_btn_pray">Pray the salvation prayer</string>
+	<string name="next_step_btn_find_church">Find a church!</string>
+	<string name="next_step_btn_feedback">Send feedback to HCJB!</string>
+	<string name="next_step_salvation_prayer">Pray out, loud, your own prayer for salvation. The words are not the important thing,
+					what is important is your hearts desire to give your life to Jesus. If you do not know what to
+					pray, the following can serve as a prayer;
+					\n\nDear Lord, I admit that I am a sinner. I have done many things that don’t please you.
+					I have lived my life for myself. I am sorry and I repent. I ask you to forgive me.
+					I believe that you died on the cross for me, to save me. You did what I could not do for myself.
+					I come to you now and ask you to take control of my life, I give it to you.
+					Help me to live every day in a way that pleases you. I love you, Lord, and I thank you that I will
+					spend all eternity with you. \n\nAmen. </string>
+	<string name="next_step_popup_ok">OK!</string>
+	<string name="weekday_monday">Monday</string>
+	<string name="weekday_tuesday">Tuesday</string>
+	<string name="weekday_wednesday">Wednesday</string>
+	<string name="weekday_thursday">Thursday</string>
+	<string name="weekday_friday">Friday</string>
+	<string name="weekday_saturday">Saturday</string>
+	<string name="weekday_sunday">Sunday</string>
+	<string name="change_the_date_btn">Change the date</string>
+	<string name="menuRestartWeek">Restart week</string>
+</resources>
