@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBoxPreference android:title="Alert Mode" android:key="enableAlert" android:summary="Enable beep and vib" android:defaultValue="true"></CheckBoxPreference>
     <CheckBoxPreference android:title="Insistent Mode" android:key="enableInsistent" android:summary="Do not leave your device if enabled! Beep will drain battery and your friends!"></CheckBoxPreference>
-    <EditTextPreference android:key="easterDay_DayOfYear" android:title="Easter day - day of year" android:summary="Set which day of year (0-365) is Easter Day"></EditTextPreference>
     <ListPreference android:key="bibleLanguage" android:title="Select bible translation" android:entryValues="@array/bible_values" android:entries="@array/bibles" android:summary="Which bible translation to be used."/>
 </PreferenceScreen> 

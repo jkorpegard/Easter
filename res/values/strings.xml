@@ -14,6 +14,7 @@
     <string name="reklmatext4"><a href="http://www.hcjb.se/index.php?id=26">What is HCJB Global?</a></string> 
     <string name="reklmatext5"><a href="http://www.hcjb.se/index.php?id=28">Listen to HCJB Global</a></string> 
     <string name="bibleSource">\n\n - Svenska Folkbibeln</string> 
+    <string name="bibleSourceNET">\n\n - NET Bible®</string> 
     <string name="start_easter_button">Start Easter week now</string> 
     <string name="continue_easter_button">Continue Easter week</string> 
     <string name="about_hcjb_button">About HJCB</string> 
@@ -32,8 +33,12 @@
 	  than one hundred bible texts will be notified and displayed!
 	  \n\nOnce all the bible texts are read, additional features are unlocked on the start screen.
 	  \n\nThis application has been made to bring the suffering and sacrifice of Christ to mind during the Eastern week.
-	  \n\nBible texts are from Svenska Folkbibeln (Swedish) and the NET Bible (English).
 	  \n\nThe background image is a painting by XYZ, photographed and made available under the creative common license by QXZ.
+	  \n\nBible texts are from Svenska Folkbibeln (Swedish) and the NET Bible (English).
+	  \n\nScripture quoted by permission. All scripture quotations, unless otherwise indicated, are
+	  taken from the NET Bible® copyright ©1996-2006 by Biblical Studies Press, L.L.C.
+	  www.bible.org All rights reserved. This material is available in its entirety as a free
+	  download or online web use at http://netbible.org/ .
 	  </string>
 	<string name="help_header">Help on the application</string>
 	<string name="help_text">Start easter week by clicking on the start button. Follow Christ the last week before his death and resurrection. Additional features will be unlocked when all texts are read.</string>

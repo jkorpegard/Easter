@@ -351,6 +351,15 @@ public class BibleTexts {
 	  }
 
 
+		public String getBibleSourceString(Context context) {
+			String strLanguage = PreferenceManager.getDefaultSharedPreferences(baseContext).getString("bibleLanguage", "-1");
+
+			if (strLanguage.equals("1"))
+				return context.getString(R.string.bibleSource);
+			else
+				return context.getString(R.string.bibleSourceNET);
+		}
+
 	  
 	  private String getTableViewName() {
 		  String strLanguage = PreferenceManager.getDefaultSharedPreferences(baseContext).getString("bibleLanguage", "-1");
@@ -398,7 +407,7 @@ public class BibleTexts {
 	   *
 	   * @return Cursor where the columns are _id, created_at, user, txt
 	   */
-	  public Cursor getAllBibleTexts(long now) {  // 9
+	  public Cursor getAllBibleTexts(long now) { 
 	    SQLiteDatabase db = this.dbHelper.getReadableDatabase();
 	    //long currentTimeRel = now - getEasterDayLong();
 	    long currentTimeRel = getCurrentTimeRel_DSTcomp(now);
@@ -430,6 +439,26 @@ public class BibleTexts {
 		SQLiteDatabase db = this.dbHelper.getReadableDatabase();
 		String[] selectColumns = { C_TIMESTAMP, C_HOUR, C_READ };
 		Cursor cur=db.query(true, getTableViewName(),  selectColumns, C_READ + " == 0", null, null, null, C_TIMESTAMP, "1");
+		if (cur != null) {
+			int count = cur.getCount();
+			cur.close();
+			if (count == 0)
+				return true;
+			
+		}
+
+		return false;
+	}
+
+	public boolean isAllReadNow() {
+		long now = Calendar.getInstance().getTimeInMillis();
+		SQLiteDatabase db = this.dbHelper.getReadableDatabase();
+	    //long currentTimeRel = now - getEasterDayLong();
+	    long currentTimeRel = getCurrentTimeRel_DSTcomp(now);
+	    
+		String[] selectColumns = { C_TIMESTAMP, C_HOUR, C_READ };
+	    Cursor cur = db.query(getTableViewName(),  selectColumns, "TIMESTAMP < " + currentTimeRel + " AND " + C_READ + " == 0", null, null, null, C_TIMESTAMP); 
+		
 		if (cur != null) {
 			int count = cur.getCount();
 			cur.close();

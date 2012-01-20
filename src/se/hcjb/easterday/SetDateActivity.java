@@ -38,11 +38,22 @@ public class SetDateActivity extends ActionBarActivity {
         // get the current date
         Calendar now = Calendar.getInstance();
         now.setFirstDayOfWeek(Calendar.MONDAY);
-        Calendar c = now;
-        c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
-        while (c.getTimeInMillis() < now.getTimeInMillis())
-        	c.add(Calendar.DAY_OF_YEAR, 7);
+        int date1 = now.get(Calendar.DAY_OF_MONTH);
+        Log.d(TAG, "1: NOW Day of month is: " + date1);
         
+        Calendar c = (Calendar) now.clone();
+        c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+        date1 = c.get(Calendar.DAY_OF_MONTH);
+        int date2 = now.get(Calendar.DAY_OF_MONTH);
+        Log.d(TAG, "2: NOW Day of month is: " + date1 + " and C Day of month is: " + date2);
+        
+        
+        while (c.getTimeInMillis() < now.getTimeInMillis()) {
+        	c.add(Calendar.DAY_OF_YEAR, 7);
+            date1 = c.get(Calendar.DAY_OF_MONTH);
+            date2 = now.get(Calendar.DAY_OF_MONTH);
+            Log.d(TAG, "3: NOW Day of month is: " + date1 + " and C Day of month is: " + date2);
+        }        
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
         mDay = c.get(Calendar.DAY_OF_MONTH);
@@ -64,10 +75,13 @@ public class SetDateActivity extends ActionBarActivity {
     		cal.set(Calendar.MONTH, mMonth);
     		cal.set(Calendar.DAY_OF_MONTH, mDay);
     		
-    		((EasterApplication) getApplication()).bibleTexts.setEasterDate(cal);
     		
-	    	startActivity(new Intent(this, Easter.class)); 
-    		
+    		EasterApplication easterApp = (EasterApplication) getApplication();
+    		easterApp.bibleTexts.setEasterDate(cal);
+    		if (easterApp.bibleTexts.getTextCount() > 0)
+    			startActivity(new Intent(this, Easter.class)); 
+    		else
+	    		startActivity(new Intent(this, StartedActivity.class));
     	}
     	else if (v.getId() == R.id.pickDate)
             showDialog(DATE_DIALOG_ID);

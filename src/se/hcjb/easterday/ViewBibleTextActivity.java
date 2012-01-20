@@ -70,6 +70,7 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
      * 
      */
 	private int setTextViewsContent(Cursor cursor) {
+        EasterApplication eApp = (EasterApplication) getApplication();
 		TextView tView1 = (TextView) findViewById(R.id.textView1);
         TextView tView2 = (TextView) findViewById(R.id.textView2);
 
@@ -86,11 +87,11 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
 		String bibleLoc = cursor.getString(cBibleLoc);
 		
         tView1.setText(datestring);
-        tView2.setText(text + "\n\n" + bibleLoc + getString(R.string.bibleSource));
+        tView2.setText(text + "\n\n" + bibleLoc + eApp.bibleTexts.getBibleSourceString(getBaseContext()));
         
         ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView1);
         scrollView.scrollTo(0, 0);
-        ((EasterApplication) getApplication()).bibleTexts.setAsRead(id);
+        eApp.bibleTexts.setAsRead(id);
         
         if (myToast == null)
         	myToast = Toast.makeText(this, "", Toast.LENGTH_LONG);
@@ -103,9 +104,8 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
 	    Editor e = prefs.edit(); 
 		e.putInt("lastReadId", id);
         
-		((EasterApplication) getApplication()).activateCommercial(this, R.id.textView3);
+		eApp.activateCommercial(this, R.id.textView3);
 	            
-        EasterApplication eApp = (EasterApplication) getApplication();
 		if (eApp.bibleTexts.isAllRead() && (! wasAllRead) ) {
 			
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);

@@ -38,22 +38,6 @@ public class EasterApplication extends Application {
 		Log.d(TAG, "onCreate");
 		super.onCreate();
 		
-/*		boolean initialiseDatabase = (new File(DB_DESTINATION)).exists();
-		Log.d(TAG, "initialiseDatabase: " + initialiseDatabase );
-
-		try {
-			// T O D O Check if it works to do a fresh install (if db installs then), and that it is not overwritten after reboot
-			if (!initialiseDatabase) {
-				createDatabase(getBaseContext());
-				Log.e(TAG, "Re-created database!");
-
-			}
-		} catch (Exception e) {
-			Log.e(TAG, "Caught Error when creating database: " +e);
-		}
-
-		Log.d(TAG, "Now: new bibletexts!");
-	*/	
 		bibleTexts = new BibleTexts(this.getApplicationContext());
 		
 		try {
@@ -78,7 +62,7 @@ public class EasterApplication extends Application {
 		Cursor cursor = null;
 		Log.d(TAG, " ----------> Alarm Updater running, with intent " + intent);
 		try {
-			if (bibleTexts.isAllRead())
+			if (bibleTexts.isAllReadNow())
 				return; // If we got an event when all bible texts are read - just ignore!
 			if (bibleTexts.getEasterDate()!=null) {
 				Log.d(TAG, "Alarm Updater ran");
@@ -86,11 +70,10 @@ public class EasterApplication extends Application {
 				if (cursor.getCount() > 0) {
 					cursor.moveToLast();
 					int cId = createNotification(context, cursor);
-	//				easterApp.maxId = cursor.getInt(cId);
 					Editor ed = PreferenceManager.getDefaultSharedPreferences(this).edit(); 
 					ed.putInt("maxId", cursor.getInt(cId));
 					ed.commit();
-					Log.d(TAG, "New Max-id: " + cursor.getInt(cId));
+//					Log.d(TAG, "New Max-id: " + cursor.getInt(cId));
 				}
 				cursor.close();
 			}
@@ -103,24 +86,8 @@ public class EasterApplication extends Application {
 	}
 
 	
-	// T O D O: Verify that this function (and its caller code) is required to be here!!!
-/*	private void createDatabase(Context cntxt) throws IOException {
-		  
-		InputStream assetsDB = cntxt.getAssets().open("BibleTexts.db");
-		OutputStream dbOut = new FileOutputStream(DB_DESTINATION);
-		
-		byte[] buffer = new byte[1024];
-		int length;
-		while ((length = assetsDB.read(buffer))>0){
-			dbOut.write(buffer, 0, length);
-		}
-		 
-		dbOut.flush();
-		dbOut.close();
-		assetsDB.close();
-	}*/
 
-	public void initTimer() { // Can be called both on boot (from BootReceiver) and from Easter!!!
+	public void initTimer() { 
 		Intent alarmIntent = new Intent(this, AlarmReceiver.class);
 		PendingIntent pendingIntent = PendingIntent.getBroadcast(this, EasterApplication.ALARM_INTENT_ID, alarmIntent, 0);
 		AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE); 
@@ -179,18 +146,18 @@ public class EasterApplication extends Application {
 		Notification notification = new Notification(R.drawable.eastericon, place +", "+ datestring, System.currentTimeMillis());
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context); 
-		if (prefs.getBoolean("enableAlert", false)) {
+//		if (prefs.getBoolean("enableAlert", false)) {
 			notification.defaults = Notification.DEFAULT_ALL;
 			long[] vibrate = {100,100,200,300};
 			notification.vibrate = vibrate;
-		}
+//		}
 		notification.flags |= Notification.FLAG_AUTO_CANCEL;
 		if (prefs.getBoolean("enableInsistent", false))
 			notification.flags |= Notification.FLAG_INSISTENT;
 		notification.setLatestEventInfo(context, datestring + ", " + place, text, pendingIntent);
 		mManager.notify(APP_ID, notification);
 
-		Log.d(TAG, "Sent notification: " + chapVerse);
+//		Log.d(TAG, "Sent notification: " + chapVerse);
 		  
 	  }
 }

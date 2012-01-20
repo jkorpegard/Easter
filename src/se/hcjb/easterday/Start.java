@@ -15,7 +15,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 public class Start extends Activity implements OnClickListener {
 //	private static final String TAG = "EasterLog:Start";
@@ -85,7 +84,7 @@ public class Start extends Activity implements OnClickListener {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
       MenuInflater inflater = getMenuInflater();
-      inflater.inflate(R.menu.menu, menu);
+      inflater.inflate(R.menu.menu_main, menu);
       return true; 
     }
     
@@ -98,7 +97,7 @@ public class Start extends Activity implements OnClickListener {
           startActivity(new Intent(this, PrefsActivity.class));  
           Log.d(TAG, "startActivity launced");
         break;
-      case R.id.itemResetDB:
+/*      case R.id.itemResetDB:
     	  try {
     		  Log.d(TAG, "Installing database...");
     		  easterApp.bibleTexts.createDatabase(getApplicationContext());
@@ -106,12 +105,12 @@ public class Start extends Activity implements OnClickListener {
     		  Log.e(TAG, "Exception: " + e.toString());
        		  Toast.makeText(getApplicationContext(), "Exception: " + e.toString(), Toast.LENGTH_SHORT).show();
     	  }
-    	break;
+    	break; */
       case R.id.itemRestartWeek:
 //    	  easterApp.bibleTexts.easterDate = null;
     	  easterApp.bibleTexts.setEasterDate(null);
     	  // Fall through - cleanDB to set all as un-read!
-      case R.id.itemCleanDB:
+//      case R.id.itemCleanDB:
     	  this.easterApp.bibleTexts.setAllAsUnRead();
     	  Log.d(TAG, "Read-flag cleared for all items");
 		  break;
