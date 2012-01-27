@@ -21,7 +21,7 @@
     <string name="hcjb_activity_header">Om HCJB Global Sweden</string> 
     <string name="hcjb_activity_text">HCJB Global Sweden är en förening som verkar för att sprida budskapet om Jesus till alla människor, och är en del av missionsorganisationen HCJB Global.
     \nLäs mer om <a href="http://www.hcjb.se">HCJB Global Sweden</a>
-    \nLäs mer om <a href="http://www.hcjb.se">HCJB Global</a></string>
+    \nLäs mer om <a href="http://www.hcjb.org">HCJB Global</a></string>
 	<string name="about_header">Om Applikationen</string>
 	<string name="about_text">Den här applikationen är ett helt nytt sätt att läsa bibeln. Applikationen är gjord av HCJB Global Sweden.
 	  \n\nNär påskveckan är påbörjad (antingen genom att sätta ett datum för påskdagen manuellt, eller när påskveckan börjar enligt almanackan),
@@ -53,7 +53,9 @@
 	<string name="started_number_days1">Om</string>
 	<string name="started_number_days2">dagar...</string>
 	<string name="set_date_header">Datum för Påskdagen</string>
-	<string name="set_date_text">Ställ in datum för påskdagen; förslagsvis nästa söndag:</string>
+	<string name="set_date_text">Ställ in datum för påskdagen; förslagsvis nästa söndag:
+		\nFörsta texten kommer visas en vecka <strong>före</strong> inställt datum.
+		\n\nDatum för påskdagen:</string>
 	<string name="set_date_button_next">Nästa</string>
 	<string name="start_next_step">Nästa Steg</string>
 	<string name="start_feedback">Återkoppling</string>

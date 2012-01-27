@@ -52,7 +52,9 @@
 	<string name="started_number_days1">in</string>
 	<string name="started_number_days2">days...</string>
 	<string name="set_date_header">Set date...</string>
-	<string name="set_date_text">Please set the date for when Easter day; preferably next coming Sunday.</string>
+	<string name="set_date_text">Please set the date for when Easter day; preferably next coming Sunday.
+		\nThe first text will be displayed one week <strong>before</strong> the selected date.
+		\n\nEaster day date:</string>
 	<string name="set_date_button_next">Start easter week!</string>
 	<string name="start_next_step">Next step</string>
 	<string name="start_feedback">Feedback</string>
