@@ -20,7 +20,11 @@ import android.util.Log;
 import android.widget.TextView;
 
 public class EasterApplication extends Application {
+	// Note: These constants have to be in synch with what is in the array.xml file!
+	protected static final int TRANSLATION_SFB = 1;
+	protected static final int TRANSLATION_NET = 2;
 	public BibleTexts bibleTexts=null;
+	
 	///// "Global variable" for data transfer to ViewBibleText TODO: Replace with intent data! 
 	int id = -1;
 
@@ -34,6 +38,8 @@ public class EasterApplication extends Application {
 	public static final int APP_MODE_ALL_READ= 3;
 	public static final int APP_MODE_RESTARTED = 4;
 
+	public final static int DAY_IN_MILLIS = 1000 * 60 * 60 * 24;
+	
 	@Override public void onCreate() {
 		Log.d(TAG, "onCreate");
 		super.onCreate();
@@ -160,4 +166,5 @@ public class EasterApplication extends Application {
 //		Log.d(TAG, "Sent notification: " + chapVerse);
 		  
 	  }
+
 }

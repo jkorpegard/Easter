@@ -4,8 +4,7 @@
     <string name="app_name">Live with Christ</string> 
     <string name="titlePrefs">Settings</string> 
     <string name="prefsMenuTitle">Settings</string> 
-    <string name="menuResetDB">Reset DB</string> 
-    <string name="menuCleanDB">Clear read-flag</string> 
+	<string name="menuRestartWeek">Restart week</string>
     <string name="titleViewBibleTextActivity">Bible text</string> 
     <string name="titleEaster">The Easter with Jesus</string> 
     <string name="reklmatext1"><a href="http://www.hcjb.se/index.php?id=6">About HCJB Global</a></string> 
@@ -33,18 +32,25 @@
 	  than one hundred bible texts will be notified and displayed!
 	  \n\nOnce all the bible texts are read, additional features are unlocked on the start screen.
 	  \n\nThis application has been made to bring the suffering and sacrifice of Christ to mind during the Eastern week.
-	  \n\nThe background image is a painting by XYZ, photographed and made available under the creative common license by QXZ.
+	  \n\nThe background image is a painting by Diego Velázquez, available as Public Domain picture from Wikipedia.
+	  \n\nThe origin of the background photo (empty tomb) is unknown.
 	  \n\nBible texts are from Svenska Folkbibeln (Swedish) and the NET Bible (English).
 	  \n\nScripture quoted by permission. All scripture quotations, unless otherwise indicated, are
 	  taken from the NET Bible® copyright ©1996-2006 by Biblical Studies Press, L.L.C.
 	  www.bible.org All rights reserved. This material is available in its entirety as a free
 	  download or online web use at http://netbible.org/ .
+	  \n\nSvenska Folkbibeln, Copyright (C) 1996, 1998, Stiftelsen Svenska Folkbibeln, Stockholm, 
+	  and Stiftelsen Biblicum, Ljungby.
 	  </string>
 	<string name="help_header">Help on the application</string>
 	<string name="help_text">Start easter week by clicking on the start button. Follow Christ the last week before his death and resurrection. Additional features will be unlocked when all texts are read.</string>
 	<string name="about_app_button">About the app</string>
 	<string name="started_header">Application has started</string>
-	<string name="started_text">Application has started, but no text has been displayed yet. Please be patient and wait for the next text to come...</string>
+	<string name="started_text">Application has started, but no text has been displayed yet. Please be patient and wait for the first text to come, it will be notified: </string>
+	<string name="started_today">Today!</string>
+	<string name="started_tomorrow">Tomorrow!</string>
+	<string name="started_number_days1">in</string>
+	<string name="started_number_days2">days...</string>
 	<string name="set_date_header">Set date...</string>
 	<string name="set_date_text">Please set the date for when Easter day; preferably next coming Sunday.</string>
 	<string name="set_date_button_next">Start easter week!</string>
@@ -88,5 +94,9 @@
 	<string name="weekday_saturday">Saturday</string>
 	<string name="weekday_sunday">Sunday</string>
 	<string name="change_the_date_btn">Change the date</string>
-	<string name="menuRestartWeek">Restart week</string>
+	<string name="bibleTranslationShortNET">NET</string>
+	<string name="bibleTranslationShortSFB">SFB</string>
+	<string name="select_bible_translation">Select which Bible translation to be used
+	\nNew English Translation - NET
+	\Svenska Folkbibeln - SFB</string>
 </resources>

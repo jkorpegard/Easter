@@ -38,21 +38,12 @@ public class SetDateActivity extends ActionBarActivity {
         // get the current date
         Calendar now = Calendar.getInstance();
         now.setFirstDayOfWeek(Calendar.MONDAY);
-        int date1 = now.get(Calendar.DAY_OF_MONTH);
-        Log.d(TAG, "1: NOW Day of month is: " + date1);
         
         Calendar c = (Calendar) now.clone();
         c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
-        date1 = c.get(Calendar.DAY_OF_MONTH);
-        int date2 = now.get(Calendar.DAY_OF_MONTH);
-        Log.d(TAG, "2: NOW Day of month is: " + date1 + " and C Day of month is: " + date2);
         
-        
-        while (c.getTimeInMillis() < now.getTimeInMillis()) {
+        while (c.getTimeInMillis() < (now.getTimeInMillis() + (1000 * 60 * 60 * 24 * 4))) { // At least 4 days left to Easter Day
         	c.add(Calendar.DAY_OF_YEAR, 7);
-            date1 = c.get(Calendar.DAY_OF_MONTH);
-            date2 = now.get(Calendar.DAY_OF_MONTH);
-            Log.d(TAG, "3: NOW Day of month is: " + date1 + " and C Day of month is: " + date2);
         }        
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);

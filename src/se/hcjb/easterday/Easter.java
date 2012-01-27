@@ -46,6 +46,7 @@ public class Easter extends ListActivity implements OnClickListener /*, OnItemCl
 		e.putInt("lastReadId", id);
 		e.commit();
 		
+		
     	// TODO: Pass ID in the intent instead of global variable!!!
 		easterApp.id = id;
         startActivity(new Intent(this, ViewBibleTextActivity.class));

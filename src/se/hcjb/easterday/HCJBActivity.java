@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 public class HCJBActivity extends ActionBarActivity {
 
-	// TODO Set HCJB arcs in the background instead of black. (Not a todo here really, but in the xml file...)
+	// TODO Set HCJB arcs in the background instead of black. (Not a todo here really, but in the xml file...) 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -8,6 +8,7 @@ import java.io.OutputStream;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -157,6 +158,29 @@ public class BibleTexts {
 		}
 	}
 	
+	public int getTranslation() {
+		String strLanguage = PreferenceManager.getDefaultSharedPreferences(baseContext).getString("bibleLanguage", "-1");
+
+		if (strLanguage.equals("1"))
+			return EasterApplication.TRANSLATION_SFB;
+		else if (strLanguage.equals("2"))
+			return EasterApplication.TRANSLATION_NET;
+		else {
+			String lang=Locale.getDefault().getLanguage();
+			Log.d(TAG, "Local language is equal to: " + lang);
+			if (lang.equals("sv")) 
+				return EasterApplication.TRANSLATION_SFB;
+		}
+		
+		return EasterApplication.TRANSLATION_NET;
+	}
+	
+	public void setTranslation(int translation) {
+		Editor ed = PreferenceManager.getDefaultSharedPreferences(baseContext).edit(); 
+		ed.putString("bibleLanguage", String.format("%d", translation));
+		ed.commit();
+	}
+	
 	Cursor getTexts()  
 	{
 	    Cursor cursor = null;
@@ -201,17 +225,7 @@ public class BibleTexts {
     	if ((nextEasterDay.getTimeInMillis() - now.getTimeInMillis()) < (1000 * 60 * 60 * 24 * 21)) // three weeks before Easter
     		this.setEasterDate(nextEasterDay);
     	
-    	// Move easterDay forward, then try again in 10 seconds...
-/* No; let be for now... Get next Easter Day instead later        	Editor prefsEdit = prefs.edit();
-        	// TODO: Should be replaced by a more intelligent move forward with the coming years easter day date...
-        	int newEasterDay = easterDay  + 7;
-        	// TODO: loop until easterday > current day of year... (slightly better temporary solution)
-//        	newEasterDay = getNextEasterDay(Calendar.getInstance().getTime());
-        	prefsEdit.putString("easterDay_DayOfYear", String.format("%d", newEasterDay));
-        	prefsEdit.commit();        	
-        	setAllAsUnRead(); */
-//    		Log.d(TAG, "Reached end of texts... Change easter day to " + prefs.getString("easterDay_DayOfYear", "<invalid>"));
-		return currentTime + (1000 * 60 * 60 * 24); // 100000000; // Wait LONG time!
+		return currentTime + (EasterApplication.DAY_IN_MILLIS); // Wait LONG time; until tomorrow!
 		
 	}
 
@@ -219,16 +233,16 @@ public class BibleTexts {
 	private Calendar getNextEasterDay(Date now) {
 		
 		if (now.after(new Date(114,3,20)))
-			return new GregorianCalendar(2015, Calendar.APRIL, 5); // 2015-04-05 newDate = new Date(115,3,5);
+			return new GregorianCalendar(2015, Calendar.APRIL, 5); 
 		else if (now.after(new Date(113,2,31)))
-			return new GregorianCalendar(2014, Calendar.APRIL, 20); // 2015-04-05 newDate = new Date(114,3,20);
+			return new GregorianCalendar(2014, Calendar.APRIL, 20); 
 		else if (now.after(new Date(112,3,8)))
-			return new GregorianCalendar(2013, Calendar.MARCH, 31); // 2015-04-05 newDate = new Date(113-2-31);
+			return new GregorianCalendar(2013, Calendar.MARCH, 31); 
 		else if (now.after(new Date(111,3,2)))
-			return new GregorianCalendar(2012, Calendar.APRIL,8); // 2015-04-05 newDate = new Date(112,3,8);
+			return new GregorianCalendar(2012, Calendar.APRIL,8); 
 
-		return new GregorianCalendar(2011, Calendar.APRIL,2); // 2015-04-05 newDate = new Date(2011,3,2); // Must be before 2011-04-02
-		
+		return new GregorianCalendar(2011, Calendar.APRIL,2); 
+
 	}
 
 	public long getEasterDayLong() {
@@ -352,19 +366,28 @@ public class BibleTexts {
 
 
 		public String getBibleSourceString(Context context) {
-			String strLanguage = PreferenceManager.getDefaultSharedPreferences(baseContext).getString("bibleLanguage", "-1");
+//			String strLanguage = PreferenceManager.getDefaultSharedPreferences(baseContext).getString("bibleLanguage", "-1");
 
-			if (strLanguage.equals("1"))
+			if (getTranslation() == EasterApplication.TRANSLATION_SFB)
 				return context.getString(R.string.bibleSource);
 			else
 				return context.getString(R.string.bibleSourceNET);
 		}
 
+		public String getBibleSourceStringShort(Context context) {
+//			String strLanguage = PreferenceManager.getDefaultSharedPreferences(baseContext).getString("bibleLanguage", "-1");
+
+			if (getTranslation() == EasterApplication.TRANSLATION_SFB)
+				return context.getString(R.string.bibleTranslationShortSFB);
+			else
+				return context.getString(R.string.bibleTranslationShortNET);
+		}
+
 	  
 	  private String getTableViewName() {
-		  String strLanguage = PreferenceManager.getDefaultSharedPreferences(baseContext).getString("bibleLanguage", "-1");
+//		  String strLanguage = PreferenceManager.getDefaultSharedPreferences(baseContext).getString("bibleLanguage", "-1");
 
-		  if (strLanguage.equals("1"))
+		  if (getTranslation() == EasterApplication.TRANSLATION_SFB)
 			  return TABLE_VIEW;
 		  else
 			  return TABLE_VIEW_EN;
@@ -454,7 +477,7 @@ public class BibleTexts {
 		long now = Calendar.getInstance().getTimeInMillis();
 		SQLiteDatabase db = this.dbHelper.getReadableDatabase();
 	    //long currentTimeRel = now - getEasterDayLong();
-	    long currentTimeRel = getCurrentTimeRel_DSTcomp(now);
+	    long currentTimeRel = getCurrentTimeRel_DSTcomp(now); 
 	    
 		String[] selectColumns = { C_TIMESTAMP, C_HOUR, C_READ };
 	    Cursor cur = db.query(getTableViewName(),  selectColumns, "TIMESTAMP < " + currentTimeRel + " AND " + C_READ + " == 0", null, null, null, C_TIMESTAMP); 

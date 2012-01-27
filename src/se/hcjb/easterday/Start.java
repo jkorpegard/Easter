@@ -74,6 +74,10 @@ public class Start extends Activity implements OnClickListener {
         	v3.setText("Locked"); v3.setVisibility(View.INVISIBLE);
         	v4.setText("Locked"); v4.setVisibility(View.INVISIBLE);
         	v5.setText("Locked"); v5.setVisibility(View.INVISIBLE);
+			if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+        		ll0.setBackgroundDrawable(getResources().getDrawable(R.drawable.background));
+        	else
+        		ll0.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_landscape));        		
         }
 	    // Set commercial and make it clickable
 		((EasterApplication) getApplication()).activateCommercial(this, R.id.textView3);

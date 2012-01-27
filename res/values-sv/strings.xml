@@ -3,9 +3,8 @@
     <string name="hello">Påsken med Jesus</string>
     <string name="app_name">Lev med Jesus</string> 
     <string name="titlePrefs">Inställningar</string> 
-    <string name="prefsMenuTitle">Inst.</string> 
-    <string name="menuResetDB">Reset DB</string> 
-    <string name="menuCleanDB">Rensa läst-flagga</string> 
+    <string name="prefsMenuTitle">Inställningar</string> 
+	<string name="menuRestartWeek">Starta om veckan</string>
     <string name="titleViewBibleTextActivity">Bibeltext</string> 
     <string name="titleEaster">Påsk med Jesus</string> 
     <string name="reklmatext1"><a href="http://www.hcjb.se/index.php?id=6">Om HCJB Global</a></string> 
@@ -32,12 +31,15 @@
 	  visas vid mer än hundra tillfällen!
 	  \n\nNär alla bibeltexter är lästa kommer nya funktioner vara tillgängliga på startsidan.
 	  \n\nDen här applikationen är gjord för att visa på Jesu lidande och offer under påskveckan.
-	  \n\nBakgrundsbilden är en målning av N.N., fotograferad och publicerad under "the creative common license" av N.N.
+	  \n\nBakgrundsbilden är en målning av Diego Velázquez, tillgänglig som "Public Domain" på Wikipedia.
+	  \n\nUrsprunget till bakgrund-fotot (den tomma graven) är okänt.
 	  \n\nBibeltexterna är hämtade från "Svenska Folkbibeln" (på Svenska) och "The NET Bible" (på Engelska).
 	  \n\nScripture quoted by permission. All scripture quotations, unless otherwise indicated, are
 	  taken from the NET Bible® copyright ©1996-2006 by Biblical Studies Press, L.L.C.
 	  www.bible.org All rights reserved. This material is available in its entirety as a free
 	  download or online web use at http://netbible.org/ .
+	  \n\nSvenska Folkbibeln, Copyright (C) 1996, 1998, Stiftelsen Svenska Folkbibeln, Stockholm, 
+	  och Stiftelsen Biblicum, Ljungby.
 	  </string>
 	<string name="help_header">Instruktioner för applikationen</string>
 	<string name="help_text">Starta påskveckan genom att klicka på "Starta påskveckan"-knappen. 
@@ -45,13 +47,17 @@
 	  Efter det att alla texter har visats och är lästa kommer nya funktioner att aktiveras på startsidan</string>
 	<string name="about_app_button">Om applikationen</string>
 	<string name="started_header">Applikationen är aktiverad</string>
-	<string name="started_text">Påskveckan har aktiverats, men ingen text finns att läsa än. Vänta tålmodigt så kommer du bli notifierad när första texten finns att läsa (en vecka före påskdagen).</string>
+	<string name="started_text">Påskveckan har aktiverats, men ingen text finns att läsa än. Vänta så kommer du bli notifierad när första texten finns att läsa (en vecka före påskdagen). Först texten visas: </string>
+	<string name="started_today">Idag!</string>
+	<string name="started_tomorrow">Imorgon!</string>
+	<string name="started_number_days1">Om</string>
+	<string name="started_number_days2">dagar...</string>
 	<string name="set_date_header">Datum för Påskdagen</string>
 	<string name="set_date_text">Ställ in datum för påskdagen; förslagsvis nästa söndag:</string>
 	<string name="set_date_button_next">Nästa</string>
 	<string name="start_next_step">Nästa Steg</string>
-	<string name="start_feedback">Feedback</string>
-	<string name="start_header">Påskapplikationen...</string>
+	<string name="start_feedback">Återkoppling</string>
+	<string name="start_header">En påsk med Jesus!</string>
 	<string name="start_find_church">Hitta till en kyrka</string>
 	<string name="start_give_button">Ge en gåva till HCJB</string>
     <string name="next_step_header">Nästa steg</string>

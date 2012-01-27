@@ -22,6 +22,7 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
 	private int id = -1;
 //	private Toast toastLoc = null;
 	Toast myToast = null; //Toast.makeText(this, "", Toast.LENGTH_SHORT);
+	private EasterApplication eApp = (EasterApplication) getApplication();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
         
 
 	    //       id = eApp.id; // TODO: Replace with intent data!
-        EasterApplication eApp = (EasterApplication) getApplication();
+        eApp = (EasterApplication) getApplication();
         try {
 //			id = this.getPreferences(Context.MODE_PRIVATE).getInt("lastReadId", -1);
 		    id = PreferenceManager.getDefaultSharedPreferences(this).getInt("lastReadId", -1); 
@@ -49,6 +50,7 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
 	    findViewById(R.id.vbtNext).setOnClickListener(this);
 	    findViewById(R.id.vbtPrev).setOnClickListener(this);
 	    findViewById(R.id.vbtHome).setOnClickListener(this);
+	    findViewById(R.id.viewBibleTextTranslation).setOnClickListener(this);
 
 	    Cursor cursor = eApp.bibleTexts.getBibleTextsById(id);
     	startManagingCursor(cursor);
@@ -70,7 +72,7 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
      * 
      */
 	private int setTextViewsContent(Cursor cursor) {
-        EasterApplication eApp = (EasterApplication) getApplication();
+        //EasterApplication eApp = (EasterApplication) getApplication();
 		TextView tView1 = (TextView) findViewById(R.id.textView1);
         TextView tView2 = (TextView) findViewById(R.id.textView2);
 
@@ -88,6 +90,8 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
 		
         tView1.setText(datestring);
         tView2.setText(text + "\n\n" + bibleLoc + eApp.bibleTexts.getBibleSourceString(getBaseContext()));
+        
+        ((TextView) findViewById(R.id.viewBibleTextTranslation)).setText(eApp.bibleTexts.getBibleSourceStringShort(getBaseContext()));
         
         ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView1);
         scrollView.scrollTo(0, 0);
@@ -126,12 +130,23 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
 		return id;
 	}
 
-
+	private void refresh(){
+		Cursor cursor = eApp.bibleTexts.getBibleTextsById(id);
+   	    try {
+			cursor.moveToFirst();
+			setTextViewsContent(cursor); 
+			cursor.close();
+		} catch (Exception e) {
+			Log.e(TAG, "Crached when refreshing!" + e.getMessage());
+			e.printStackTrace();
+			cursor.close();
+		}
+	}
 	
     public void onClick(View v) {
 //    	Log.d(TAG, "onClicked");
     	int count=-1;
-        EasterApplication eApp = (EasterApplication) getApplication();
+        //EasterApplication eApp = (EasterApplication) getApplication();
     	if (v.getId() == R.id.vbtNext ) {
     		if (eApp.bibleTexts.isAllRead() && (id == PreferenceManager.getDefaultSharedPreferences(this).getInt("maxId", 0))) {
     		    final Intent intent = new Intent(this, NextStepActivity.class);
@@ -172,6 +187,28 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
 		    final Intent intent = new Intent(this, Start.class);
 		    intent.setFlags (Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		    startActivity (intent);
+    		
+    	}
+    	else if (v.getId() == R.id.viewBibleTextTranslation) {
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setMessage(R.string.select_bible_translation)
+			       .setCancelable(false)
+			       .setPositiveButton(R.string.bibleTranslationShortNET, new DialogInterface.OnClickListener() {
+			           public void onClick(DialogInterface dialog, int id) {
+				        	//EasterApplication eApp = (EasterApplication) getApplication();
+				        	eApp.bibleTexts.setTranslation(EasterApplication.TRANSLATION_NET);
+				        	refresh();
+			           }
+			       })
+			       .setNegativeButton(R.string.bibleTranslationShortSFB, new DialogInterface.OnClickListener() {
+			           public void onClick(DialogInterface dialog, int id) {
+				        	//EasterApplication eApp = (EasterApplication) getApplication();
+				        	eApp.bibleTexts.setTranslation(EasterApplication.TRANSLATION_SFB);
+				        	refresh();
+			           }
+			       });
+			AlertDialog alert = builder.create();		
+			alert.show();
     		
     	}
     }

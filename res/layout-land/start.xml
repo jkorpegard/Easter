@@ -64,6 +64,17 @@
 	            android:textColor="#ffcccccc"
 	            android:background="@null"
 		    	/>
+		    <Button 
+		    	android:id="@+id/button6" android:text="@string/about_hcjb_button"
+		    	android:layout_width="fill_parent"
+		        android:layout_gravity="center_vertical"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:gravity="center_horizontal"
+	            android:drawableTop="@drawable/icon_hcjb"
+	            android:textColor="#ffcccccc"
+	            android:background="@null"
+		    	/>
         </LinearLayout>
         
         <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:id="@+id/linearLayout2" android:layout_width="fill_parent" android:layout_weight="1">
@@ -79,6 +90,16 @@
 	            android:background="@null"
 		    	android:text="@string/start_next_step"/>
 		    <Button 
+		    	android:id="@+id/button5" 
+		    	android:layout_width="fill_parent"
+		        android:layout_gravity="center_vertical"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:gravity="center_horizontal"
+	            android:drawableTop="@drawable/icon_church"
+	            android:textColor="#ffcccccc"
+	            android:background="@null" android:text="@string/start_find_church"/>
+		    <Button 
 		    	android:id="@+id/button4" 
 		    	android:layout_width="fill_parent"
 		        android:layout_gravity="center_vertical"
@@ -91,54 +112,6 @@
 	            android:text="@string/start_feedback"/>
         </LinearLayout>
         
-        <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:id="@+id/linearLayout2" android:layout_width="fill_parent" android:layout_weight="1">
-		    <Button 
-		    	android:id="@+id/button5" 
-		    	android:layout_width="fill_parent"
-		        android:layout_gravity="center_vertical"
-		        android:layout_height="wrap_content"
-		        android:layout_weight="1"
-		        android:gravity="center_horizontal"
-	            android:drawableTop="@drawable/icon_church"
-	            android:textColor="#ffcccccc"
-	            android:background="@null" android:text="@string/start_find_church"/>
-		    <Button 
-		    	android:id="@+id/button6" android:text="@string/about_hcjb_button"
-		    	android:layout_width="fill_parent"
-		        android:layout_gravity="center_vertical"
-		        android:layout_height="wrap_content"
-		        android:layout_weight="1"
-		        android:gravity="center_horizontal"
-	            android:drawableTop="@drawable/icon_hcjb"
-	            android:textColor="#ffcccccc"
-	            android:background="@null"
-		    	/>
-        </LinearLayout>
-        
-        <!--  LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:id="@+id/linearLayout2" android:layout_width="fill_parent" android:layout_weight="1">
-		    <Button 
-		    	android:id="@+id/button7" 
-		    	android:layout_width="fill_parent"
-		        android:layout_gravity="center_vertical"
-		        android:layout_height="wrap_content"
-		        android:layout_weight="1"
-		        android:gravity="center_horizontal"
-	            android:drawableTop="@drawable/hcjb_logo_icon"
-	            android:textColor="#ff355689"
-	            android:background="@null" android:text="@string/start_give_button"/>
-		    <Button 
-		    	android:id="@+id/button8" 
-		    	android:text="@string/about_app_button"
-		    	android:layout_width="fill_parent"
-		        android:layout_gravity="center_vertical"
-		        android:layout_height="wrap_content"
-		        android:layout_weight="1"
-		        android:gravity="center_horizontal"
-	            android:drawableTop="@drawable/info_icon"
-	            android:textColor="#ff355689"
-	            android:background="@null"
-	            />
-        </LinearLayout  -->
         
         
     </LinearLayout>
