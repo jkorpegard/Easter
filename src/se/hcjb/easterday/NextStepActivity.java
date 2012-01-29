@@ -20,8 +20,6 @@ public class NextStepActivity extends ActionBarActivity {
         
 	    v1 = findViewById(R.id.next_step_btn3);
 	    v1.setOnClickListener(this);
-        
-        ((EasterApplication) getApplication()).activateCommercial(this, R.id.textView3);
     }
 
 	@Override
@@ -33,7 +31,7 @@ public class NextStepActivity extends ActionBarActivity {
 			       .setCancelable(false)
 			       .setPositiveButton(R.string.next_step_popup_ok, new DialogInterface.OnClickListener() {
 			           public void onClick(DialogInterface dialog, int id) {
-//			                ViewBibleTextActivity.this.finish();
+			        	   ;
 			           }
 			       });
 			AlertDialog alert = builder.create();		

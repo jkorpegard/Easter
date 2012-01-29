@@ -36,110 +36,86 @@ public final class R {
         public static final int title_height=0x7f070001;
     }
     public static final class drawable {
-        public static final int addressbook_icon=0x7f020000;
-        public static final int background=0x7f020001;
-        public static final int bg_landscape=0x7f020002;
-        public static final int check1=0x7f020003;
-        public static final int check2=0x7f020004;
-        public static final int crucifixion=0x7f020005;
-        public static final int down=0x7f020006;
-        public static final int eastericon=0x7f020007;
-        public static final int eastericon_grey=0x7f020008;
-        public static final int eastericon_small=0x7f020009;
-        public static final int email_icon=0x7f02000a;
-        public static final int emptytomb=0x7f02000b;
-        public static final int emptytomb_landscape=0x7f02000c;
-        public static final int emptytomb_org=0x7f02000d;
-        public static final int faq_icon=0x7f02000e;
-        public static final int hcjb_logo_icon=0x7f02000f;
-        public static final int help=0x7f020010;
-        public static final int ic_media_pause=0x7f020011;
-        public static final int ic_media_play=0x7f020012;
-        public static final int ic_media_reverse=0x7f020013;
-        public static final int icon=0x7f020014;
-        public static final int icon_church=0x7f020015;
-        public static final int icon_easter=0x7f020016;
-        public static final int icon_feedback=0x7f020017;
-        public static final int icon_hcjb=0x7f020018;
-        public static final int icon_info=0x7f020019;
-        public static final int icon_nextstep=0x7f02001a;
-        public static final int info_icon=0x7f02001b;
-        public static final int lock_icon=0x7f02001c;
-        public static final int logga=0x7f02001d;
-        public static final int logga_s=0x7f02001e;
-        public static final int new1=0x7f02001f;
-        public static final int next=0x7f020020;
-        public static final int picture_jesus_6=0x7f020021;
-        public static final int prev=0x7f020022;
-        public static final int reklam=0x7f020023;
-        public static final int reklam_s=0x7f020024;
-        public static final int roundedbutton=0x7f020025;
-        public static final int roundedbutton2=0x7f020026;
-        public static final int roundedbutton_small=0x7f020027;
-        public static final int up=0x7f020028;
+        public static final int background=0x7f020000;
+        public static final int bg_landscape=0x7f020001;
+        public static final int check1=0x7f020002;
+        public static final int eastericon=0x7f020003;
+        public static final int eastericon_grey=0x7f020004;
+        public static final int eastericon_small=0x7f020005;
+        public static final int emptytomb=0x7f020006;
+        public static final int emptytomb_landscape=0x7f020007;
+        public static final int ic_media_play=0x7f020008;
+        public static final int ic_media_reverse=0x7f020009;
+        public static final int icon=0x7f02000a;
+        public static final int icon_church=0x7f02000b;
+        public static final int icon_easter=0x7f02000c;
+        public static final int icon_feedback=0x7f02000d;
+        public static final int icon_hcjb=0x7f02000e;
+        public static final int icon_info=0x7f02000f;
+        public static final int icon_nextstep=0x7f020010;
+        public static final int logga=0x7f020011;
+        public static final int logga_s=0x7f020012;
+        public static final int new1=0x7f020013;
     }
     public static final class id {
         public static final int aboutHeader=0x7f080009;
         public static final int aboutText=0x7f08000c;
         public static final int blocks_now=0x7f080007;
         public static final int blocks_ruler=0x7f080006;
-        public static final int button1=0x7f080020;
-        public static final int button2=0x7f080021;
-        public static final int button3=0x7f080022;
-        public static final int button4=0x7f080023;
-        public static final int button5=0x7f080024;
-        public static final int button6=0x7f080025;
-        public static final int dateDisplay=0x7f08001d;
+        public static final int button1=0x7f08001f;
+        public static final int button2=0x7f080020;
+        public static final int button3=0x7f080021;
+        public static final int button4=0x7f080022;
+        public static final int button5=0x7f080023;
+        public static final int button6=0x7f080024;
+        public static final int dateDisplay=0x7f08001c;
         public static final int dialog_discard_confirm=0x7f080003;
         public static final int dialog_moderator=0x7f080004;
         public static final int dialog_wave=0x7f080005;
-        public static final int frameLayout1=0x7f080013;
+        public static final int frameLayout1=0x7f080012;
         public static final int hcjbText=0x7f080010;
-        public static final int imageView1=0x7f080015;
+        public static final int imageView1=0x7f080014;
         public static final int imageView2=0x7f08000e;
-        public static final int itemPrefs=0x7f08002c;
-        public static final int itemRestartWeek=0x7f08002d;
-        public static final int ivstatus=0x7f080019;
-        public static final int label1=0x7f08001a;
-        public static final int label2=0x7f08001b;
-        public static final int linearLayout0=0x7f080012;
+        public static final int itemPrefs=0x7f08002b;
+        public static final int itemRestartWeek=0x7f08002c;
+        public static final int ivstatus=0x7f080018;
+        public static final int label1=0x7f080019;
+        public static final int label2=0x7f08001a;
+        public static final int linearLayout0=0x7f080011;
         public static final int linearLayout1=0x7f08000d;
         public static final int linearLayout2=0x7f08000b;
-        public static final int next_step_btn1=0x7f080016;
-        public static final int next_step_btn2=0x7f080017;
-        public static final int next_step_btn3=0x7f080018;
-        public static final int pickDate=0x7f08001e;
+        public static final int next_step_btn1=0x7f080015;
+        public static final int next_step_btn2=0x7f080016;
+        public static final int next_step_btn3=0x7f080017;
+        public static final int pickDate=0x7f08001d;
         public static final int scrollView1=0x7f08000a;
-        public static final int set_date_next=0x7f08001f;
-        public static final int startedText=0x7f080026;
-        public static final int textView1=0x7f08001c;
-        public static final int textView2=0x7f08002b;
+        public static final int set_date_next=0x7f08001e;
+        public static final int startedText=0x7f080025;
+        public static final int textView1=0x7f08001b;
+        public static final int textView2=0x7f08002a;
         public static final int textView3=0x7f08000f;
-        public static final int textViewHelpText=0x7f080011;
-        public static final int textViewNumDays=0x7f080027;
+        public static final int textViewNumDays=0x7f080026;
         public static final int title_container=0x7f080000;
         public static final int title_logo=0x7f080001;
         public static final int title_text=0x7f080002;
-        public static final int vbtActionBarNext=0x7f080014;
+        public static final int vbtActionBarNext=0x7f080013;
         public static final int vbtHome=0x7f080008;
-        public static final int vbtNext=0x7f08002a;
-        public static final int vbtPrev=0x7f080029;
-        public static final int viewBibleTextTranslation=0x7f080028;
+        public static final int vbtNext=0x7f080029;
+        public static final int vbtPrev=0x7f080028;
+        public static final int viewBibleTextTranslation=0x7f080027;
     }
     public static final class layout {
         public static final int about=0x7f030000;
         public static final int feedback=0x7f030001;
         public static final int find_church=0x7f030002;
         public static final int hcjb=0x7f030003;
-        public static final int help=0x7f030004;
-        public static final int main=0x7f030005;
-        public static final int next_step=0x7f030006;
-        public static final int row=0x7f030007;
-        public static final int row2=0x7f030008;
-        public static final int set_date=0x7f030009;
-        public static final int start=0x7f03000a;
-        public static final int started=0x7f03000b;
-        public static final int viewbibletext=0x7f03000c;
+        public static final int main=0x7f030004;
+        public static final int next_step=0x7f030005;
+        public static final int row=0x7f030006;
+        public static final int set_date=0x7f030007;
+        public static final int start=0x7f030008;
+        public static final int started=0x7f030009;
+        public static final int viewbibletext=0x7f03000a;
     }
     public static final class menu {
         public static final int menu_main=0x7f0b0000;
@@ -158,6 +134,7 @@ public final class R {
         public static final int bibleTranslationShortSFB=0x7f09003d;
         public static final int change_the_date_btn=0x7f09003b;
         public static final int continue_easter_button=0x7f09000f;
+        public static final int enableInsistentModeSummary=0x7f090040;
         public static final int feedback_header=0x7f09002b;
         public static final int feedback_text=0x7f09002c;
         public static final int find_church_header=0x7f090029;
@@ -176,12 +153,15 @@ public final class R {
         public static final int next_step_popup_ok=0x7f090033;
         public static final int next_step_salvation_prayer=0x7f090032;
         public static final int next_step_text=0x7f090028;
+        public static final int prefsEnableInsistentModeTitle=0x7f09003f;
         public static final int prefsMenuTitle=0x7f090003;
         public static final int reklmatext1=0x7f090007;
         public static final int reklmatext2=0x7f090008;
         public static final int reklmatext3=0x7f090009;
         public static final int reklmatext4=0x7f09000a;
         public static final int reklmatext5=0x7f09000b;
+        public static final int selectBibleTranslationSummary=0x7f090042;
+        public static final int selectBibleTranslationTitle=0x7f090041;
         public static final int select_bible_translation=0x7f09003e;
         public static final int set_date_button_next=0x7f090021;
         public static final int set_date_header=0x7f09001f;
@@ -218,11 +198,10 @@ public final class R {
          */
         public static final int Theme_IOSched=0x7f0a0001;
         public static final int TitleBar=0x7f0a0003;
-        public static final int TitleBarAction=0x7f0a0004;
-        public static final int TitleBarLogo=0x7f0a0007;
-        public static final int TitleBarProgressIndicator=0x7f0a0005;
-        public static final int TitleBarSeparator=0x7f0a0006;
-        public static final int TitleBarSpring=0x7f0a0008;
+        public static final int TitleBarLogo=0x7f0a0006;
+        public static final int TitleBarProgressIndicator=0x7f0a0004;
+        public static final int TitleBarSeparator=0x7f0a0005;
+        public static final int TitleBarSpring=0x7f0a0007;
         /** 
         <TextView
         android:layout_width="wrap_content"
@@ -236,7 +215,7 @@ public final class R {
 
 
          */
-        public static final int TitleBarText=0x7f0a0009;
+        public static final int TitleBarText=0x7f0a0008;
     }
     public static final class xml {
         public static final int prefs=0x7f040000;

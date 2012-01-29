@@ -101,4 +101,8 @@
 	<string name="select_bible_translation">Select which Bible translation to be used
 	\nNew English Translation - NET
 	\Svenska Folkbibeln - SFB</string>
+	<string name="prefsEnableInsistentModeTitle">Insistent Mode</string>
+	<string name="enableInsistentModeSummary">Do not leave your device if enabled! Beep will drain battery and your friends!</string>
+	<string name="selectBibleTranslationTitle">Select bible translation</string>
+	<string name="selectBibleTranslationSummary">Which bible translation (and language) that should be used for the bible texts.</string>
 </resources>

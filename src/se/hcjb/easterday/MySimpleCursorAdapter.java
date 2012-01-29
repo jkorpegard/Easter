@@ -28,14 +28,12 @@ public class MySimpleCursorAdapter extends SimpleCursorAdapter {
 
 	@Override public void setViewImage(ImageView iv, String text)
 	{
-//		super.setViewImage(iv, text);
 		if (text.equals("0")) {
 			iv.setImageResource(R.drawable.new1);
 		}
 		else {
 			iv.setImageResource(R.drawable.check1);
 		}
-//		Log.d("MySimpleCurosrAdapter", "Text: " + text);
 	}
 
 }

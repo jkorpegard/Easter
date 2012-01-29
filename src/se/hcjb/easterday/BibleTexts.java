@@ -22,11 +22,7 @@ import android.util.Log;
 
 
 public class BibleTexts {
-//	static final String DEFAULT_EASTER_DAY_STRING = "-1";
-//	private static final int DEFAULT_EASTER_DAY = -1;
 	private static final String TAG = "EasterLog:BibleTexts";
-// Replacing with full date instead of: int easterDay = DEFAULT_EASTER_DAY;
-/////////////////////////////////	Date easterDate = null;
 	SharedPreferences prefs;
 	Context baseContext;
 	private final String DB_DESTINATION = "/data/data/se.hcjb.easterday/databases/BibleTexts.db";
@@ -193,15 +189,10 @@ public class BibleTexts {
 
 	long getNextEventTime(long currentTime)
 	{
-/////////////////////////////////		easterDate = getEasterDate();
-
-//			Log.i(TAG, ">>>>>>>>>>>>>>>>>>>>EasterDay_DayOfYear = "+ easterDay);
-		
     	Cursor cursor = getNextEvent(currentTime);  
     	if (cursor.getCount()>0) {
         	cursor.moveToFirst();
     		int cTimeStamp= cursor.getColumnIndex(C_TIMESTAMP);
-//	    		Log.d(TAG, "+++++++++++++++ timestamp: " + (cursor.getLong(cTimeStamp)/1000));////////////////
     		long ret = cursor.getLong(cTimeStamp) + getEasterDayLong();
        		int cHour = cursor.getColumnIndex(C_HOUR);
        		int hourOfDay = cursor.getInt(cHour);
@@ -214,8 +205,6 @@ public class BibleTexts {
        				String.format("%02d", tempCal.get(Calendar.MINUTE)) + ":" +
        				String.format("%02d", tempCal.get(Calendar.SECOND))); 
     		long ret2 = tempCal.getTimeInMillis();
-//	    		tempCal.setTimeInMillis(ret - (24*60*60*1000)); ///////////////////
-//	       		Log.d(TAG, "Diff: " + (ret2 - ret));
     		return ret2;
     	}
     	cursor.close();
@@ -247,7 +236,6 @@ public class BibleTexts {
 
 	public long getEasterDayLong() {
 		Calendar easterDate = getEasterDate();
-//		Log.i(TAG, "////////////////////EasterDay_DayOfYear = "+ easterDay);
    		
 		if (easterDate != null)
 			return easterDate.getTimeInMillis();		
@@ -278,10 +266,6 @@ public class BibleTexts {
 //	public static final String C_DATESTRING= "DATESTRING"; // TODO: Remove DATESTRING from database!!!
 	public static final String C_BIBLE_LOC= "BIBLE_LOC";
 
-//	private static final String GET_ALL_ORDER_BY = C_DAY + "," + C_HOUR + "," + C_MINUTE + " DESC";
-
-//	  private static final String[] MAX_ID_AT_COLUMNS = { "max(" + C_ID + ")" };
-
 	private static final String[] DB_TEXT_COLUMNS = { C_TEXT, C_READ, C_DAY, C_HOUR, C_MINUTE, C_BOOK_NAME, C_CHAP_VERSE, C_LOCATION_TEXT, C_ID, C_BIBLE_LOC };
 
 	  // DbHelper implementations
@@ -309,8 +293,6 @@ public class BibleTexts {
 
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-			//Log.i(TAG, "Dropping table: " + TABLE_VIEW);
-			//db.execSQL("drop table " + TABLE_VIEW);
 			Log.d(TAG, "Old version: " + oldVersion + ", New version: " + newVersion);
 			this.onCreate(db);
 			try {
@@ -332,17 +314,6 @@ public class BibleTexts {
 	  public void close() { 
 	    this.dbHelper.close();
 	  }
-
-/*	  public void insertOrIgnore(ContentValues values) {  
-	    Log.d(TAG, "insertOrIgnore on " + values);
-	    SQLiteDatabase db = this.dbHelper.getWritableDatabase();  
-	    try {
-	      db.insertWithOnConflict(TABLE_VIEW, null, values,
-	          SQLiteDatabase.CONFLICT_IGNORE);  
-	    } finally {
-	      db.close(); 
-	    }
-	  }*/
 
 	  private long getCurrentTimeRel_DSTcomp(long currentTime) {
 		  long currentTimeRel = currentTime - getEasterDayLong();
@@ -366,7 +337,6 @@ public class BibleTexts {
 
 
 		public String getBibleSourceString(Context context) {
-//			String strLanguage = PreferenceManager.getDefaultSharedPreferences(baseContext).getString("bibleLanguage", "-1");
 
 			if (getTranslation() == EasterApplication.TRANSLATION_SFB)
 				return context.getString(R.string.bibleSource);
@@ -375,7 +345,6 @@ public class BibleTexts {
 		}
 
 		public String getBibleSourceStringShort(Context context) {
-//			String strLanguage = PreferenceManager.getDefaultSharedPreferences(baseContext).getString("bibleLanguage", "-1");
 
 			if (getTranslation() == EasterApplication.TRANSLATION_SFB)
 				return context.getString(R.string.bibleTranslationShortSFB);
@@ -385,7 +354,6 @@ public class BibleTexts {
 
 	  
 	  private String getTableViewName() {
-//		  String strLanguage = PreferenceManager.getDefaultSharedPreferences(baseContext).getString("bibleLanguage", "-1");
 
 		  if (getTranslation() == EasterApplication.TRANSLATION_SFB)
 			  return TABLE_VIEW;
@@ -432,7 +400,6 @@ public class BibleTexts {
 	   */
 	  public Cursor getAllBibleTexts(long now) { 
 	    SQLiteDatabase db = this.dbHelper.getReadableDatabase();
-	    //long currentTimeRel = now - getEasterDayLong();
 	    long currentTimeRel = getCurrentTimeRel_DSTcomp(now);
 	    return db.query(getTableViewName(),  getDbTextColumns(), "TIMESTAMP < " + currentTimeRel, null, null, null, C_TIMESTAMP); 
 	  } 
@@ -476,7 +443,6 @@ public class BibleTexts {
 	public boolean isAllReadNow() {
 		long now = Calendar.getInstance().getTimeInMillis();
 		SQLiteDatabase db = this.dbHelper.getReadableDatabase();
-	    //long currentTimeRel = now - getEasterDayLong();
 	    long currentTimeRel = getCurrentTimeRel_DSTcomp(now); 
 	    
 		String[] selectColumns = { C_TIMESTAMP, C_HOUR, C_READ };

@@ -29,8 +29,6 @@ public class StartedActivity extends ActionBarActivity {
         			(millisLeft/EasterApplication.DAY_IN_MILLIS) + " " + getString(R.string.started_number_days2));
         else 
         	((TextView) findViewById(R.id.textViewNumDays)).setText(R.string.started_tomorrow);
-
-	    eApp.activateCommercial(this, R.id.textView3);
     }
 
 

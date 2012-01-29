@@ -19,7 +19,7 @@ public class SetDateActivity extends ActionBarActivity {
 	private int mMonth;
 	private int mDay;
 
-	static final int DATE_DIALOG_ID = 0;
+	static final int DATE_DIALOG_ID = 0; 
 	
 	static final String TAG = "EasterLog:SetDateActivity";
 	
@@ -27,33 +27,28 @@ public class SetDateActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_date);
 
-        // capture our View elements
         mDateDisplay = (TextView) findViewById(R.id.dateDisplay);
         mPickDate = (Button) findViewById(R.id.pickDate);
-        // add a click listener to the button
         mPickDate.setOnClickListener((android.view.View.OnClickListener) this); 
 
         ((Button) findViewById(R.id.set_date_next)).setOnClickListener(this);
         		
-        // get the current date
         Calendar now = Calendar.getInstance();
         now.setFirstDayOfWeek(Calendar.MONDAY);
         
         Calendar c = (Calendar) now.clone();
         c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
         
-        while (c.getTimeInMillis() < (now.getTimeInMillis() + (1000 * 60 * 60 * 24 * 4))) { // At least 4 days left to Easter Day
+        while (c.getTimeInMillis() < (now.getTimeInMillis() + (EasterApplication.DAY_IN_MILLIS * 4))) { // At least 4 days left to Easter Day
         	c.add(Calendar.DAY_OF_YEAR, 7);
         }        
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
         mDay = c.get(Calendar.DAY_OF_MONTH);
 
-        // display the current date (this method is below)
         updateDisplay();
 		findViewById(R.id.vbtActionBarNext).setOnClickListener(this);
 
-// now in super class...	    ((EasterApplication) getApplication()).activateCommercial(this, R.id.textView3);
     }
     
 	@Override
@@ -69,6 +64,7 @@ public class SetDateActivity extends ActionBarActivity {
     		
     		EasterApplication easterApp = (EasterApplication) getApplication();
     		easterApp.bibleTexts.setEasterDate(cal);
+    		easterApp.initTimer(); // If first event is before next timer hit
     		if (easterApp.bibleTexts.getTextCount() > 0)
     			startActivity(new Intent(this, Easter.class)); 
     		else
@@ -79,18 +75,11 @@ public class SetDateActivity extends ActionBarActivity {
     }
     
     
-    // updates the date in the TextView
     private void updateDisplay() {
         mDateDisplay.setText("" + String.format("%d", mYear) + "-" + String.format("%02d", mMonth+1) + "-" + String.format("%02d", mDay));
-//            new StringBuilder()
-                    // Month is 0 based so add 1
-//            		.append(mYear).append("-")
-//                    .append(mMonth + 1).append("-")
-//                    .append(mDay).append(" "));
         Log.d(TAG,"Date set: " + mYear + "-" + (mMonth + 1) + "-" + mDay);
     }
     
-    // the callback received when the user "sets" the date in the dialog
     private DatePickerDialog.OnDateSetListener mDateSetListener =
             new DatePickerDialog.OnDateSetListener() {
 
@@ -102,18 +91,11 @@ public class SetDateActivity extends ActionBarActivity {
                     c.set(Calendar.YEAR, year);
             		c.set(Calendar.MONTH, monthOfYear);
             		c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            		Log.d(TAG, "1Day of month: " + c.get(Calendar.DAY_OF_MONTH));
                     c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
-            		Log.d(TAG, "2Day of month: " + c.get(Calendar.DAY_OF_MONTH));
-                    
-                    Log.d(TAG, "Calendar date: " + c.toString());
-
-                    Log.d(TAG,"Calendar is now: " + c.get(Calendar.YEAR) + "-" + (c.get(Calendar.MONTH) + 1) + "-" + c.get(Calendar.DAY_OF_MONTH));
                     
                     mYear = c.get(Calendar.YEAR);
                     mMonth = c.get(Calendar.MONTH);
                     mDay = c.get(Calendar.DAY_OF_MONTH);
-                    Log.d(TAG,"Trying to set: " + mYear + "-" + (mMonth + 1) + "-" + mDay);
                     updateDisplay();
                 }
             };    
@@ -121,10 +103,8 @@ public class SetDateActivity extends ActionBarActivity {
     @Override
     protected Dialog onCreateDialog(int id) {
         switch (id) {
-        case DATE_DIALOG_ID:
-            return new DatePickerDialog(this,
-                        mDateSetListener,
-                        mYear, mMonth, mDay);
+	        case DATE_DIALOG_ID:
+	            return new DatePickerDialog(this, mDateSetListener, mYear, mMonth, mDay);
         }
         return null;
     }

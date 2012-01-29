@@ -20,21 +20,17 @@ import android.widget.Toast;
 public class ViewBibleTextActivity extends Activity implements OnClickListener{
 	private static final String TAG = "EasterLog:ViewBibleTextActivity";
 	private int id = -1;
-//	private Toast toastLoc = null;
-	Toast myToast = null; //Toast.makeText(this, "", Toast.LENGTH_SHORT);
-	private EasterApplication eApp = (EasterApplication) getApplication();
+	Toast myToast = null; 
+	private EasterApplication eApp;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.viewbibletext);
-        
-
-	    //       id = eApp.id; // TODO: Replace with intent data!
+	    
         eApp = (EasterApplication) getApplication();
         try {
-//			id = this.getPreferences(Context.MODE_PRIVATE).getInt("lastReadId", -1);
-		    id = PreferenceManager.getDefaultSharedPreferences(this).getInt("lastReadId", -1); 
+		    id = PreferenceManager.getDefaultSharedPreferences(this).getInt("lastReadId", -1); // TODO: Replace with intent data!
 		} catch (Exception e) {
 			id = -1;
 		}
@@ -117,7 +113,7 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
 			       .setCancelable(false)
 			       .setPositiveButton(R.string.alert_last_text_ok, new DialogInterface.OnClickListener() {
 			           public void onClick(DialogInterface dialog, int id) {
-//			                ViewBibleTextActivity.this.finish();
+			        	   ;
 			           }
 			       });
 			AlertDialog alert = builder.create();		
@@ -144,9 +140,7 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
 	}
 	
     public void onClick(View v) {
-//    	Log.d(TAG, "onClicked");
     	int count=-1;
-        //EasterApplication eApp = (EasterApplication) getApplication();
     	if (v.getId() == R.id.vbtNext ) {
     		if (eApp.bibleTexts.isAllRead() && (id == PreferenceManager.getDefaultSharedPreferences(this).getInt("maxId", 0))) {
     		    final Intent intent = new Intent(this, NextStepActivity.class);
@@ -195,14 +189,12 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
 			       .setCancelable(false)
 			       .setPositiveButton(R.string.bibleTranslationShortNET, new DialogInterface.OnClickListener() {
 			           public void onClick(DialogInterface dialog, int id) {
-				        	//EasterApplication eApp = (EasterApplication) getApplication();
 				        	eApp.bibleTexts.setTranslation(EasterApplication.TRANSLATION_NET);
 				        	refresh();
 			           }
 			       })
 			       .setNegativeButton(R.string.bibleTranslationShortSFB, new DialogInterface.OnClickListener() {
 			           public void onClick(DialogInterface dialog, int id) {
-				        	//EasterApplication eApp = (EasterApplication) getApplication();
 				        	eApp.bibleTexts.setTranslation(EasterApplication.TRANSLATION_SFB);
 				        	refresh();
 			           }

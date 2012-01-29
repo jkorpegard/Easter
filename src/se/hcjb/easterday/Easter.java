@@ -22,15 +22,9 @@ public class Easter extends ListActivity implements OnClickListener /*, OnItemCl
 	  Button startButton; 
 	  Button stopButton;
 	  Cursor listViewCursor = null;
-	//  ListView lv;
 	  Cursor cursor;
-//	  SimpleCursorAdapter cursor_adapter;  // 3
-//	  static final String[] FROM = { DbHelper.C_CREATED_AT, DbHelper.C_USER,
-//	      DbHelper.C_TEXT };  // 4
-//	  static final int[] TO = { R.id.textCreatedAt, R.id.textUser, R.id.textText }; // 5
 
 	  MySimpleCursorAdapter cursorAdapter;  
-//	  static final String[] FROM = { BibleTexts.C_DAY , BibleTexts.C_LOCATION_TEXT};
 	  static final String[] FROM = { BibleTexts.C_HOUR, BibleTexts.C_LOCATION_TEXT, BibleTexts.C_READ};
 	  static final int[] TO = { R.id.label1, R.id.label2, R.id.ivstatus}; 
 	  
@@ -41,7 +35,6 @@ public class Easter extends ListActivity implements OnClickListener /*, OnItemCl
 	
 	private void startBibleText(int id)
 	{
-//		Editor e = this.getPreferences(Context.MODE_PRIVATE).edit();
 	    Editor e = PreferenceManager.getDefaultSharedPreferences(this).edit(); 
 		e.putInt("lastReadId", id);
 		e.commit();
@@ -64,7 +57,6 @@ public class Easter extends ListActivity implements OnClickListener /*, OnItemCl
     @Override
     protected void onResume(){
     	super.onResume();
-        Log.d(TAG, "onResume started");
     	BibleTexts bt = easterApp.bibleTexts;
     	
 	    findViewById(R.id.vbtHome).setOnClickListener(this);
@@ -102,7 +94,6 @@ public class Easter extends ListActivity implements OnClickListener /*, OnItemCl
 			e1.printStackTrace();
 			noDatabase = true;
 		}
-    	Log.d(TAG, "Found number of entries:  " + cnt);
 
     	if (noDatabase) {
     		try {
@@ -115,7 +106,7 @@ public class Easter extends ListActivity implements OnClickListener /*, OnItemCl
     	}
     	
         try {
-			cursorAdapter = new MySimpleCursorAdapter(this, R.layout.row2, listViewCursor, FROM, TO);
+			cursorAdapter = new MySimpleCursorAdapter(this, R.layout.row, listViewCursor, FROM, TO);
 		} catch (Exception e) {
 			Log.d(TAG, "Could not set adapter... " + e.toString());
 			e.printStackTrace();

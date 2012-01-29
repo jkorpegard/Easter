@@ -17,7 +17,6 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 public class Start extends Activity implements OnClickListener {
-//	private static final String TAG = "EasterLog:Start";
 	private boolean dateSet = false;
 	EasterApplication easterApp = null;
 	boolean allRead = false;
@@ -27,7 +26,6 @@ public class Start extends Activity implements OnClickListener {
     @Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//    	Log.d(TAG, "OnCreate...");
         
         easterApp = ((EasterApplication) getApplication());
         
@@ -54,7 +52,6 @@ public class Start extends Activity implements OnClickListener {
     @Override
     protected void onResume(){
     	super.onResume();
-//    	Log.d(TAG, "OnResume...");
 	    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 	    this.allRead = prefs.getBoolean("isAllRead", false);
         Button v3 = (Button) findViewById(R.id.button3);
@@ -79,12 +76,10 @@ public class Start extends Activity implements OnClickListener {
         	else
         		ll0.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_landscape));        		
         }
-	    // Set commercial and make it clickable
 		((EasterApplication) getApplication()).activateCommercial(this, R.id.textView3);
     }
 
     
-    // Called first time user clicks on the menu button
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
       MenuInflater inflater = getMenuInflater();
@@ -92,7 +87,6 @@ public class Start extends Activity implements OnClickListener {
       return true; 
     }
     
- // Called when an options item is clicked
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
       switch (item.getItemId()) {
@@ -101,24 +95,11 @@ public class Start extends Activity implements OnClickListener {
           startActivity(new Intent(this, PrefsActivity.class));  
           Log.d(TAG, "startActivity launced");
         break;
-/*      case R.id.itemResetDB:
-    	  try {
-    		  Log.d(TAG, "Installing database...");
-    		  easterApp.bibleTexts.createDatabase(getApplicationContext());
-    	  } catch (Exception e) { // do nothing if exception
-    		  Log.e(TAG, "Exception: " + e.toString());
-       		  Toast.makeText(getApplicationContext(), "Exception: " + e.toString(), Toast.LENGTH_SHORT).show();
-    	  }
-    	break; */
       case R.id.itemRestartWeek:
-//    	  easterApp.bibleTexts.easterDate = null;
     	  easterApp.bibleTexts.setEasterDate(null);
-    	  // Fall through - cleanDB to set all as un-read!
-//      case R.id.itemCleanDB:
     	  this.easterApp.bibleTexts.setAllAsUnRead();
     	  Log.d(TAG, "Read-flag cleared for all items");
 		  break;
-    	  
       }
 
       return true;
@@ -128,8 +109,6 @@ public class Start extends Activity implements OnClickListener {
     
 	@Override
 	public void onClick(View v) {
-//    	Log.d(TAG, "onClicked"); 
-//        EasterApplication eApp = (EasterApplication) getApplication();
     	if (v.getId() == R.id.button1) {
     		startActivity(new Intent (this, AboutActivity.class));
     	}

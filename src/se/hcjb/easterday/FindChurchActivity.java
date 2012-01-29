@@ -10,8 +10,7 @@ public class FindChurchActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.find_church);
         
-		((EasterApplication) getApplication()).activateCommercial(this, R.id.textView3);
-        
+        //Make links work in TextView
 	    TextView t1 = (TextView) findViewById(R.id.hcjbText);
 	    t1.setMovementMethod(LinkMovementMethod.getInstance());
     }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="bibles">
+        <item>Svenska - Svenska Folkbibeln</item>
+        <item>Engelska - NET Bible</item>
+    </string-array>
+    
+    <string-array name="bible_values">
+        <item>1</item>
+        <item>2</item>
+    </string-array></resources>

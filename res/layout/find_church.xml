@@ -8,16 +8,11 @@
 	android:layout_weight="1" 
 	android:layout_width="match_parent"
 	android:layout_height="match_parent" android:orientation="vertical">
-		<!-- TextView android:layout_width="fill_parent" 
-		 	android:id="@+id/hcjbHeader" 
-		 	android:layout_height="wrap_content"
-		 	android:textSize="30sp" android:text="@string/find_church_header"></TextView -->
-
 		    <LinearLayout style="@style/TitleBar">
 		        <ImageView style="@style/TitleBarLogo"
 		            android:id="@+id/vbtHome"
 		            android:contentDescription="@string/start_header" 
-		            android:src="@drawable/eastericon_grey" /> <!-- title_logo --> <!-- description_logo" -->
+		            android:src="@drawable/eastericon_grey" /> 
 		
         <ImageView style="@style/TitleBarSeparator" />
         
@@ -25,16 +20,7 @@
     	android:id="@+id/aboutHeader" 
     	android:text="@string/find_church_header" />
     	
-<!-- 		        <TextView android:layout_width="wrap_content"
-				android:textSize="24sp"
-		    	android:id="@+id/aboutHeader" 
-		    	android:text="@string/find_church_header" 
-		    	android:textColor="@color/title_text_alt" 
-		    	android:layout_height="match_parent" 
-		    	android:gravity="center_vertical"/> -->
-		
 		        <View style="@style/TitleBarSpring" />
-		        
 		
 		    </LinearLayout>
     
@@ -59,7 +45,7 @@
 	android:layout_height="wrap_content"
 	android:id="@+id/imageView2" 
 	android:gravity="center"
-	android:layout_width="wrap_content"></ImageView>
+	android:layout_width="wrap_content"/>
 	
 <TextView android:text="@string/reklmatext2" 
 	android:layout_height="wrap_content" 
@@ -68,6 +54,6 @@
 	android:gravity="center"
     android:textSize="20sp"
     android:textColor="#000"
-    android:layout_margin="10dp"></TextView>
+    android:layout_margin="10dp"/>
 </LinearLayout>
 </LinearLayout>

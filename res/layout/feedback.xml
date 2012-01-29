@@ -4,72 +4,59 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-<LinearLayout
-	android:layout_weight="1" 
-	android:layout_width="match_parent"
-	android:layout_height="match_parent" android:orientation="vertical">
-		<!-- TextView android:layout_width="fill_parent" 
-		 	android:id="@+id/hcjbHeader" 
-		 	android:layout_height="wrap_content"
-		 	android:textSize="30sp" android:text="@string/feedback_header"></TextView -->
-		 	
-		 	
-    <LinearLayout style="@style/TitleBar">
-        <ImageView style="@style/TitleBarLogo"
-            android:id="@+id/vbtHome"
-            android:contentDescription="@string/start_header" 
-            android:src="@drawable/eastericon_grey" /> <!-- title_logo --> <!-- description_logo" -->
-
-        <ImageView style="@style/TitleBarSeparator" />
-        
- 		<TextView style="@style/TitleBarText"
-    	android:id="@+id/aboutHeader" 
-    	android:text="@string/feedback_header" />
-    	
-<!--         <TextView android:layout_width="wrap_content"
-		android:textSize="24sp"
-    	android:id="@+id/aboutHeader" 
-    	android:text="@string/feedback_header" 
-    	android:textColor="@color/title_text_alt" 
-    	android:layout_height="match_parent" 
-    	android:gravity="center_vertical"/> -->
-
-        <View style="@style/TitleBarSpring" />
-        
-        <ImageView style="@style/TitleBarSeparator" />
-
-    </LinearLayout>
-		 	
-		 	
-
-		<TextView android:layout_width="fill_parent" 
-			android:id="@+id/hcjbText" 
+	<LinearLayout
+		android:layout_weight="1" 
+		android:layout_width="match_parent"
+		android:layout_height="match_parent" android:orientation="vertical">
+			 	
+	    <LinearLayout style="@style/TitleBar">
+	        <ImageView style="@style/TitleBarLogo"
+	            android:id="@+id/vbtHome"
+	            android:contentDescription="@string/start_header" 
+	            android:src="@drawable/eastericon_grey" />
+	
+	        <ImageView style="@style/TitleBarSeparator" />
+	        
+	 		<TextView style="@style/TitleBarText"
+	    	android:id="@+id/aboutHeader" 
+	    	android:text="@string/feedback_header" />
+	    	
+	        <View style="@style/TitleBarSpring" />
+	        
+	        <ImageView style="@style/TitleBarSeparator" />
+	
+	    </LinearLayout>
+			 	
+			 	
+	
+			<TextView android:layout_width="fill_parent" 
+				android:id="@+id/hcjbText" 
+				android:layout_height="wrap_content" 
+				android:textSize="18sp"
+				android:text="@string/feedback_text" />
+	
+	</LinearLayout>
+	<LinearLayout 
+		android:id="@+id/linearLayout1" 
+		android:layout_height="wrap_content" 
+		android:layout_width="match_parent" 
+		android:gravity="center"
+	    android:background="#fff">
+		
+		<ImageView 
+			android:src="@drawable/logga_s" 
+			android:layout_height="wrap_content"
+			android:id="@+id/imageView2" 
+			android:gravity="center"
+			android:layout_width="wrap_content"/>
+			
+		<TextView android:text="@string/reklmatext2" 
 			android:layout_height="wrap_content" 
-			android:textSize="18sp"
-			android:text="@string/feedback_text"></TextView>
-
-</LinearLayout>
-<LinearLayout 
-	android:id="@+id/linearLayout1" 
-	android:layout_height="wrap_content" 
-	android:layout_width="match_parent" 
-	android:gravity="center"
-    android:background="#fff">
-	
-<ImageView 
-	android:src="@drawable/logga_s" 
-	android:layout_height="wrap_content"
-	android:id="@+id/imageView2" 
-	android:gravity="center"
-	android:layout_width="wrap_content"></ImageView>
-	
-<TextView android:text="@string/reklmatext2" 
-	android:layout_height="wrap_content" 
-	android:id="@+id/textView3" 
-	android:layout_width="fill_parent"
-	android:gravity="center"
-    android:textSize="20sp"
-    android:textColor="#000"
-    android:layout_margin="10dp"></TextView>
-</LinearLayout>
+			android:id="@+id/textView3" 
+			android:layout_width="fill_parent"
+			android:gravity="center"
+		    android:textSize="20sp"
+		    android:textColor="#000"
+		    android:layout_margin="10dp"/>
+	</LinearLayout>
 </LinearLayout>

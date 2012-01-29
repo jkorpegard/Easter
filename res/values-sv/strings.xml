@@ -98,4 +98,8 @@
 	<string name="weekday_saturday">Lördag</string>
 	<string name="weekday_sunday">Söndag</string>
 	<string name="change_the_date_btn">Ändra datum</string>
+	<string name="prefsEnableInsistentModeTitle">Repterande Notifiering</string>
+	<string name="enableInsistentModeSummary">Lämna inte telefonen obevakad om den är enablad. Pipet kommer göra slut på både batteriet och dina vänner!</string>
+	<string name="selectBibleTranslationTitle">Välj bibelöversättning</string>
+	<string name="selectBibleTranslationSummary">Val av vilken bibelöversättning (och språk på bibeltexterna) som ska användas</string>
 </resources>

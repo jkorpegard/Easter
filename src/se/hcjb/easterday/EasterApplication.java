@@ -79,7 +79,6 @@ public class EasterApplication extends Application {
 					Editor ed = PreferenceManager.getDefaultSharedPreferences(this).edit(); 
 					ed.putInt("maxId", cursor.getInt(cId));
 					ed.commit();
-//					Log.d(TAG, "New Max-id: " + cursor.getInt(cId));
 				}
 				cursor.close();
 			}
@@ -152,19 +151,14 @@ public class EasterApplication extends Application {
 		Notification notification = new Notification(R.drawable.eastericon, place +", "+ datestring, System.currentTimeMillis());
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context); 
-//		if (prefs.getBoolean("enableAlert", false)) {
-			notification.defaults = Notification.DEFAULT_ALL;
-			long[] vibrate = {100,100,200,300};
-			notification.vibrate = vibrate;
-//		}
+		notification.defaults = Notification.DEFAULT_ALL;
+		long[] vibrate = {100,100,200,300};
+		notification.vibrate = vibrate;
 		notification.flags |= Notification.FLAG_AUTO_CANCEL;
 		if (prefs.getBoolean("enableInsistent", false))
 			notification.flags |= Notification.FLAG_INSISTENT;
 		notification.setLatestEventInfo(context, datestring + ", " + place, text, pendingIntent);
-		mManager.notify(APP_ID, notification);
-
-//		Log.d(TAG, "Sent notification: " + chapVerse);
-		  
+		mManager.notify(APP_ID, notification);		  
 	  }
 
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBoxPreference android:title="Insistent Mode" android:key="enableInsistent" android:summary="Do not leave your device if enabled! Beep will drain battery and your friends!"></CheckBoxPreference>
-    <ListPreference android:key="bibleLanguage" android:title="Select bible translation" android:entryValues="@array/bible_values" android:entries="@array/bibles" android:summary="Which bible translation to be used."/>
+    <CheckBoxPreference android:key="enableInsistent" android:title="@string/prefsEnableInsistentModeTitle" android:summary="@string/enableInsistentModeSummary"></CheckBoxPreference>
+    <ListPreference android:key="bibleLanguage" android:entryValues="@array/bible_values" android:entries="@array/bibles" android:title="@string/selectBibleTranslationTitle" android:summary="@string/selectBibleTranslationSummary"/>
 </PreferenceScreen> 

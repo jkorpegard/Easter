@@ -9,14 +9,11 @@ public class FeedbackActivity extends ActionBarActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.feedback);
-        
+  
+        //Make links work in TextView
 	    TextView t1 = (TextView) findViewById(R.id.hcjbText);
 	    t1.setMovementMethod(LinkMovementMethod.getInstance());
 
-	    findViewById(R.id.vbtHome).setOnClickListener(this);
-
-	    ((EasterApplication) getApplication()).activateCommercial(this, R.id.textView3);
-        
     }
 
 
