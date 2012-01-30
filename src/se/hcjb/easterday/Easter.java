@@ -49,7 +49,6 @@ public class Easter extends ListActivity implements OnClickListener /*, OnItemCl
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate started");
         easterApp = ((EasterApplication) getApplication());
         setContentView(R.layout.main);
     }
@@ -90,14 +89,13 @@ public class Easter extends ListActivity implements OnClickListener /*, OnItemCl
 				listViewCursor.moveToNext();
 			}
 		} catch (Exception e1) {
-			Log.d(TAG, "Could not find database??? " + e1);
+			Log.e(TAG, "Could not find database! " + e1);
 			e1.printStackTrace();
 			noDatabase = true;
 		}
 
     	if (noDatabase) {
     		try {
-    			Log.d(TAG, "Trying to create database.............");
 				this.easterApp.bibleTexts.createDatabase(getBaseContext());
 			} catch (IOException e) {
 				Log.e(TAG, "Coud not create database... " + e.toString());
@@ -108,7 +106,7 @@ public class Easter extends ListActivity implements OnClickListener /*, OnItemCl
         try {
 			cursorAdapter = new MySimpleCursorAdapter(this, R.layout.row, listViewCursor, FROM, TO);
 		} catch (Exception e) {
-			Log.d(TAG, "Could not set adapter... " + e.toString());
+			Log.e(TAG, "Could not set adapter... " + e.toString());
 			e.printStackTrace();
 		}
         setListAdapter(cursorAdapter);	 

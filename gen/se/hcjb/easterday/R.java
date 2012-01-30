@@ -44,18 +44,19 @@ public final class R {
         public static final int eastericon_small=0x7f020005;
         public static final int emptytomb=0x7f020006;
         public static final int emptytomb_landscape=0x7f020007;
-        public static final int ic_media_play=0x7f020008;
-        public static final int ic_media_reverse=0x7f020009;
-        public static final int icon=0x7f02000a;
-        public static final int icon_church=0x7f02000b;
-        public static final int icon_easter=0x7f02000c;
-        public static final int icon_feedback=0x7f02000d;
-        public static final int icon_hcjb=0x7f02000e;
-        public static final int icon_info=0x7f02000f;
-        public static final int icon_nextstep=0x7f020010;
-        public static final int logga=0x7f020011;
-        public static final int logga_s=0x7f020012;
-        public static final int new1=0x7f020013;
+        public static final int ic_easter=0x7f020008;
+        public static final int ic_media_play=0x7f020009;
+        public static final int ic_media_reverse=0x7f02000a;
+        public static final int icon=0x7f02000b;
+        public static final int icon_church=0x7f02000c;
+        public static final int icon_easter=0x7f02000d;
+        public static final int icon_feedback=0x7f02000e;
+        public static final int icon_hcjb=0x7f02000f;
+        public static final int icon_info=0x7f020010;
+        public static final int icon_nextstep=0x7f020011;
+        public static final int logga=0x7f020012;
+        public static final int logga_s=0x7f020013;
+        public static final int new1=0x7f020014;
     }
     public static final class id {
         public static final int aboutHeader=0x7f080009;

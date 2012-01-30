@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -20,7 +19,7 @@ public class Start extends Activity implements OnClickListener {
 	private boolean dateSet = false;
 	EasterApplication easterApp = null;
 	boolean allRead = false;
-	private static final String TAG = "EasterLog:StartView";
+//	private static final String TAG = "EasterLog:StartView";
     
 
     @Override
@@ -91,14 +90,11 @@ public class Start extends Activity implements OnClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
       switch (item.getItemId()) {
       case R.id.itemPrefs:
-          Log.d(TAG, "Prefs selected in menu");
           startActivity(new Intent(this, PrefsActivity.class));  
-          Log.d(TAG, "startActivity launced");
         break;
       case R.id.itemRestartWeek:
     	  easterApp.bibleTexts.setEasterDate(null);
     	  this.easterApp.bibleTexts.setAllAsUnRead();
-    	  Log.d(TAG, "Read-flag cleared for all items");
 		  break;
       }
 

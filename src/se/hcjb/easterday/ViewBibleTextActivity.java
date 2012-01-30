@@ -42,7 +42,6 @@ public class ViewBibleTextActivity extends Activity implements OnClickListener{
 			ed.commit();
 		}
 
-		Log.d(TAG, "Started OnCreate with id = " + id);
 	    findViewById(R.id.vbtNext).setOnClickListener(this);
 	    findViewById(R.id.vbtPrev).setOnClickListener(this);
 	    findViewById(R.id.vbtHome).setOnClickListener(this);

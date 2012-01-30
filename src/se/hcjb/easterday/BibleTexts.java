@@ -81,7 +81,7 @@ public class BibleTexts {
 			// but version is now 2... How to set initial version???
 			if (!initialiseDatabase) {
 				createDatabase(context);
-				Log.e(TAG, "Re-created database!");
+//				Log.e(TAG, "Re-created database!");
 
 			}
 		} catch (Exception e) {
@@ -89,32 +89,31 @@ public class BibleTexts {
 			Log.e(TAG, "Stack trace: " + e.getStackTrace().toString());
 		}
 	    this.dbHelper = new DbHelper(context);
-	    Log.i(TAG, "Initialized data");
 	}
 	
 	public void createDatabase(Context cntxt) throws IOException {
-		Log.d(TAG, "started createDatabase... ");
+//		Log.d(TAG, "started createDatabase... ");
 		  
 		InputStream assetsDB = cntxt.getAssets().open("BibleTexts.db");
-		Log.d(TAG, "Opened source file... ");
+//		Log.d(TAG, "Opened source file... ");
 		OutputStream dbOut = new FileOutputStream(DB_DESTINATION);
-		Log.d(TAG, "Opened destination file... ");
+//		Log.d(TAG, "Opened destination file... ");
 		
 		byte[] buffer = new byte[1024];
 		int length;
-		Log.d(TAG, "Starting to copy file... ");
+//		Log.d(TAG, "Starting to copy file... ");
 		while ((length = assetsDB.read(buffer))>0){
 			dbOut.write(buffer, 0, length);
 		}
-		Log.d(TAG, "Done copying file... ");
+//		Log.d(TAG, "Done copying file... ");
 		 
 		dbOut.flush();
 		dbOut.close();
 		assetsDB.close();
-		Log.d(TAG, "Closed and flushed all files... ");
+//		Log.d(TAG, "Closed and flushed all files... ");
 		
 		createdNewDatabase = true;
-	    Log.d(TAG, "Set flag createdNewDatabase to true");
+//	    Log.d(TAG, "Set flag createdNewDatabase to true");
 	}
 
 	public void setEasterDate(Calendar newEasterDate) {
@@ -163,7 +162,6 @@ public class BibleTexts {
 			return EasterApplication.TRANSLATION_NET;
 		else {
 			String lang=Locale.getDefault().getLanguage();
-			Log.d(TAG, "Local language is equal to: " + lang);
 			if (lang.equals("sv")) 
 				return EasterApplication.TRANSLATION_SFB;
 		}
@@ -200,10 +198,10 @@ public class BibleTexts {
     		Calendar tempCal = Calendar.getInstance(); 
     		tempCal.setTimeInMillis(ret); 
     		tempCal.set(Calendar.HOUR_OF_DAY, hourOfDay); // To compensate for DST!
-       		Log.d(TAG, "Next Event: " + tempCal.get(Calendar.DAY_OF_YEAR) + " - " +
+/*       		Log.d(TAG, "Next Event: " + tempCal.get(Calendar.DAY_OF_YEAR) + " - " +
        				String.format("%02d", tempCal.get(Calendar.HOUR_OF_DAY)) + ":" +
        				String.format("%02d", tempCal.get(Calendar.MINUTE)) + ":" +
-       				String.format("%02d", tempCal.get(Calendar.SECOND))); 
+       				String.format("%02d", tempCal.get(Calendar.SECOND))); */
     		long ret2 = tempCal.getTimeInMillis();
     		return ret2;
     	}
@@ -275,17 +273,16 @@ public class BibleTexts {
 		public DbHelper(Context context) {
 			super(context, DATABASE, null, VERSION);
 			cntxt = context;
-			Log.i(TAG, "DbHelper initiated!");
 		}
 
 		@Override
 		public void onCreate(SQLiteDatabase db) {
-			Log.i(TAG, "Creating database: " + DATABASE);
-			Log.i(TAG, "... or actually not creating!!!");
+//			Log.i(TAG, "Creating database: " + DATABASE);
+//			Log.i(TAG, "... or actually not creating!!!");
 			
 			// Set correct version number on database if it was just created
 			if (createdNewDatabase == true) {
-				Log.d(TAG, "Setting version to " + VERSION);
+//				Log.d(TAG, "Setting version to " + VERSION);
 				db.setVersion(VERSION);
 			}
 
@@ -293,15 +290,15 @@ public class BibleTexts {
 
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-			Log.d(TAG, "Old version: " + oldVersion + ", New version: " + newVersion);
+//			Log.d(TAG, "Old version: " + oldVersion + ", New version: " + newVersion);
 			this.onCreate(db);
 			try {
 				createDatabase(baseContext);
 			} catch (IOException e) {
-				Log.d(TAG,"Error when upgrading database! " + e.toString());
+//				Log.d(TAG,"Error when upgrading database! " + e.toString());
 				e.printStackTrace();
 			}
-			Log.e(TAG, "Re-created database!");
+//			Log.e(TAG, "Re-created database!");
 
 		}
 		
@@ -408,7 +405,6 @@ public class BibleTexts {
 
 
 	public void setAsRead(long id) {
-		Log.d(TAG, "Setting " + id + " as read in database");
 		ContentValues val = new ContentValues();
 	    val.put(C_READ, "1");
 
@@ -417,7 +413,6 @@ public class BibleTexts {
 	}
 	  
 	public void setAllAsUnRead() {
-		Log.d(TAG, "Setting all as unread in database");
 		ContentValues val = new ContentValues();
 	    val.put(C_READ, "0");
 

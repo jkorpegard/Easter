@@ -41,7 +41,6 @@ public class EasterApplication extends Application {
 	public final static int DAY_IN_MILLIS = 1000 * 60 * 60 * 24;
 	
 	@Override public void onCreate() {
-		Log.d(TAG, "onCreate");
 		super.onCreate();
 		
 		bibleTexts = new BibleTexts(this.getApplicationContext());
@@ -66,12 +65,10 @@ public class EasterApplication extends Application {
 	public void notification(Context context, Intent intent) {
 				
 		Cursor cursor = null;
-		Log.d(TAG, " ----------> Alarm Updater running, with intent " + intent);
 		try {
 			if (bibleTexts.isAllReadNow())
 				return; // If we got an event when all bible texts are read - just ignore!
 			if (bibleTexts.getEasterDate()!=null) {
-				Log.d(TAG, "Alarm Updater ran");
 				cursor = bibleTexts.getTexts();
 				if (cursor.getCount() > 0) {
 					cursor.moveToLast();
@@ -83,7 +80,7 @@ public class EasterApplication extends Application {
 				cursor.close();
 			}
 		} catch (Exception e) {  
-			Log.d(TAG, "!!!!!!!!!!!!! Caught exception: " + e.toString());
+			Log.e(TAG, "Caught exception: " + e.toString());
 			if (cursor!=null)
 				cursor.close();
 		}
@@ -114,7 +111,6 @@ public class EasterApplication extends Application {
 
 	public void activateCommercial(Activity act, int vId) {
 		int commercialId = (new Random()).nextInt(EasterApplication.maxCommercialId);
-        Log.d(TAG,"Commercial ID = " + commercialId);
         TextView tView3 = (TextView) act.findViewById(vId);
 	    tView3.setText(EasterApplication.getCommercialRef(commercialId));
 	    tView3.setMovementMethod(LinkMovementMethod.getInstance());
@@ -148,7 +144,7 @@ public class EasterApplication extends Application {
 		mManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, -1,
 				new Intent(context, Easter.class), PendingIntent.FLAG_UPDATE_CURRENT);
-		Notification notification = new Notification(R.drawable.eastericon, place +", "+ datestring, System.currentTimeMillis());
+		Notification notification = new Notification(R.drawable.ic_easter, place +", "+ datestring, System.currentTimeMillis());
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context); 
 		notification.defaults = Notification.DEFAULT_ALL;

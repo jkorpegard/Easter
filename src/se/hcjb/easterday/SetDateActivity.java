@@ -6,7 +6,6 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -77,7 +76,7 @@ public class SetDateActivity extends ActionBarActivity {
     
     private void updateDisplay() {
         mDateDisplay.setText("" + String.format("%d", mYear) + "-" + String.format("%02d", mMonth+1) + "-" + String.format("%02d", mDay));
-        Log.d(TAG,"Date set: " + mYear + "-" + (mMonth + 1) + "-" + mDay);
+//        Log.d(TAG,"Date set: " + mYear + "-" + (mMonth + 1) + "-" + mDay);
     }
     
     private DatePickerDialog.OnDateSetListener mDateSetListener =
