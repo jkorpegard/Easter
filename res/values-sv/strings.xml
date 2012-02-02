@@ -53,8 +53,8 @@
 	<string name="started_number_days1">Om</string>
 	<string name="started_number_days2">dagar...</string>
 	<string name="set_date_header">Datum för Påskdagen</string>
-	<string name="set_date_text">Ställ in datum för påskdagen; förslagsvis nästa söndag:
-		\nFörsta texten kommer visas en vecka <strong>före</strong> inställt datum.
+	<string name="set_date_text">Ställ in datum för påskdagen; förslagsvis nästa söndag.
+		\nFörsta texten kommer visas en vecka före inställt datum.
 		\n\nDatum för påskdagen:</string>
 	<string name="set_date_button_next">Nästa</string>
 	<string name="start_next_step">Nästa Steg</string>
@@ -102,4 +102,8 @@
 	<string name="enableInsistentModeSummary">Lämna inte telefonen obevakad om den är enablad. Pipet kommer göra slut på både batteriet och dina vänner!</string>
 	<string name="selectBibleTranslationTitle">Välj bibelöversättning</string>
 	<string name="selectBibleTranslationSummary">Val av vilken bibelöversättning (och språk på bibeltexterna) som ska användas</string>
+	<string name="wrongDateText">Datumet för påskdagen måste vara minst 5 dagar framåt i tiden!</string>
+	<string name="selectAlertTitle">Välj notifieringstyp</string>
+	<string name="selectAlertSummary">Val av hur mycket notifieringarna för ny bibeltext ska låta.</string>
+	<string name="toastTextNoReset">Påskveckan kan inte startas om när man är nära den riktiga påskveckan.</string>
 </resources>

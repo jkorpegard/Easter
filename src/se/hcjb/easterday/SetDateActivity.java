@@ -4,12 +4,14 @@ import java.util.Calendar;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SetDateActivity extends ActionBarActivity {
 	private TextView mDateDisplay;
@@ -17,6 +19,8 @@ public class SetDateActivity extends ActionBarActivity {
 	private int mYear;
 	private int mMonth;
 	private int mDay;
+	private Calendar initialDate = null;
+	private Context baseContext = null;
 
 	static final int DATE_DIALOG_ID = 0; 
 	
@@ -24,6 +28,7 @@ public class SetDateActivity extends ActionBarActivity {
 	
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        baseContext = this;
         setContentView(R.layout.set_date);
 
         mDateDisplay = (TextView) findViewById(R.id.dateDisplay);
@@ -38,9 +43,11 @@ public class SetDateActivity extends ActionBarActivity {
         Calendar c = (Calendar) now.clone();
         c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
         
-        while (c.getTimeInMillis() < (now.getTimeInMillis() + (EasterApplication.DAY_IN_MILLIS * 4))) { // At least 4 days left to Easter Day
+        while (c.getTimeInMillis() < (now.getTimeInMillis() + (EasterApplication.DAY_IN_MILLIS * 5))) { // At least 4 days left to Easter Day
         	c.add(Calendar.DAY_OF_YEAR, 7);
         }        
+        initialDate = (Calendar) c.clone();
+        
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
         mDay = c.get(Calendar.DAY_OF_MONTH);
@@ -59,7 +66,6 @@ public class SetDateActivity extends ActionBarActivity {
     		cal.set(Calendar.YEAR, mYear);
     		cal.set(Calendar.MONTH, mMonth);
     		cal.set(Calendar.DAY_OF_MONTH, mDay);
-    		
     		
     		EasterApplication easterApp = (EasterApplication) getApplication();
     		easterApp.bibleTexts.setEasterDate(cal);
@@ -91,6 +97,13 @@ public class SetDateActivity extends ActionBarActivity {
             		c.set(Calendar.MONTH, monthOfYear);
             		c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                     c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+                    
+            		if (c.getTimeInMillis() < initialDate.getTimeInMillis()) {
+                    	Toast myToast = Toast.makeText(baseContext, R.string.wrongDateText, Toast.LENGTH_LONG);
+                        myToast.show();
+                        return;
+            		}
+            			
                     
                     mYear = c.get(Calendar.YEAR);
                     mMonth = c.get(Calendar.MONTH);

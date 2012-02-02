@@ -209,7 +209,7 @@ public class BibleTexts {
 
     	Calendar now = Calendar.getInstance();
     	Calendar nextEasterDay = getNextEasterDay(now.getTime());
-    	if ((nextEasterDay.getTimeInMillis() - now.getTimeInMillis()) < (1000 * 60 * 60 * 24 * 21)) // three weeks before Easter
+    	if ((nextEasterDay.getTimeInMillis() - now.getTimeInMillis()) < (EasterApplication.DAY_IN_MILLIS * 20)) // three weeks before Easter
     		this.setEasterDate(nextEasterDay);
     	
 		return currentTime + (EasterApplication.DAY_IN_MILLIS); // Wait LONG time; until tomorrow!
@@ -217,7 +217,7 @@ public class BibleTexts {
 	}
 
 	
-	private Calendar getNextEasterDay(Date now) {
+	Calendar getNextEasterDay(Date now) {
 		
 		if (now.after(new Date(114,3,20)))
 			return new GregorianCalendar(2015, Calendar.APRIL, 5); 

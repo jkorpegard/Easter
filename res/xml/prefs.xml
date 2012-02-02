@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
   xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBoxPreference android:key="enableInsistent" android:title="@string/prefsEnableInsistentModeTitle" android:summary="@string/enableInsistentModeSummary"></CheckBoxPreference>
+    <!-- CheckBoxPreference android:key="enableInsistent" android:title="@string/prefsEnableInsistentModeTitle" android:summary="@string/enableInsistentModeSummary"></CheckBoxPreference -->
+    <ListPreference android:key="alertMode" android:entryValues="@array/alert_values" android:entries="@array/alerts" android:title="@string/selectAlertTitle" android:summary="@string/selectAlertSummary"/>
     <ListPreference android:key="bibleLanguage" android:entryValues="@array/bible_values" android:entries="@array/bibles" android:title="@string/selectBibleTranslationTitle" android:summary="@string/selectBibleTranslationSummary"/>
 </PreferenceScreen> 

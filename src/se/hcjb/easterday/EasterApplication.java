@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.database.Cursor;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -147,12 +148,27 @@ public class EasterApplication extends Application {
 		Notification notification = new Notification(R.drawable.ic_easter, place +", "+ datestring, System.currentTimeMillis());
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context); 
-		notification.defaults = Notification.DEFAULT_ALL;
-		long[] vibrate = {100,100,200,300};
-		notification.vibrate = vibrate;
-		notification.flags |= Notification.FLAG_AUTO_CANCEL;
-		if (prefs.getBoolean("enableInsistent", false))
+        String alertMode = prefs.getString("alertMode", "2");
+        Log.d(TAG, "Alert mode: " + alertMode);
+        if (alertMode.equals("1")) {
 			notification.flags |= Notification.FLAG_INSISTENT;
+			notification.defaults = Notification.DEFAULT_ALL;
+			long[] vibrate = {100,100,200,300};
+			notification.vibrate = vibrate;
+        }
+        else if (alertMode.equals("2")) {
+    		notification.defaults = Notification.DEFAULT_ALL;
+    		long[] vibrate = {100,100,200,300};
+    		notification.vibrate = vibrate;        	
+        }
+        else if (alertMode.equals("3")) {
+        	// TODO: Find another sound!
+//    		notification.defaults = Notification.DEFAULT_SOUND;
+    		notification.sound = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.pop); 
+    		Log.d(TAG, "notificat.sound = " + notification.sound.toString());
+        }
+        	
+		notification.flags |= Notification.FLAG_AUTO_CANCEL;
 		notification.setLatestEventInfo(context, datestring + ", " + place, text, pendingIntent);
 		mManager.notify(APP_ID, notification);		  
 	  }

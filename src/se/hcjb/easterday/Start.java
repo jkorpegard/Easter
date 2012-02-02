@@ -1,6 +1,8 @@
 package se.hcjb.easterday;
 
 
+import java.util.Calendar;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class Start extends Activity implements OnClickListener {
 	private boolean dateSet = false;
@@ -93,6 +96,12 @@ public class Start extends Activity implements OnClickListener {
           startActivity(new Intent(this, PrefsActivity.class));  
         break;
       case R.id.itemRestartWeek:
+    	  Calendar now = Calendar.getInstance();
+    	  Calendar nextEasterDay = easterApp.bibleTexts.getNextEasterDay(now.getTime());
+    	  if ((nextEasterDay.getTimeInMillis() - now.getTimeInMillis() ) < (EasterApplication.DAY_IN_MILLIS * 20)) {
+    		  Toast.makeText(this, R.string.toastTextNoReset, Toast.LENGTH_LONG).show();
+    		  break;
+    	  }
     	  easterApp.bibleTexts.setEasterDate(null);
     	  this.easterApp.bibleTexts.setAllAsUnRead();
 		  break;
