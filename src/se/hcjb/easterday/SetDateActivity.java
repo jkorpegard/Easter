@@ -92,13 +92,19 @@ public class SetDateActivity extends ActionBarActivity {
                                       int monthOfYear, int dayOfMonth) {
                 	
                     Calendar c = Calendar.getInstance();
+                    
                     c.setFirstDayOfWeek(Calendar.MONDAY);
                     c.set(Calendar.YEAR, year);
             		c.set(Calendar.MONTH, monthOfYear);
             		c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            		c.get(Calendar.DAY_OF_MONTH); // Has to be here to recompute, before setting Sunday!
+//                    Log.d(TAG, "c.day: " + c.get(Calendar.DAY_OF_MONTH));
                     c.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
                     
-            		if (c.getTimeInMillis() < initialDate.getTimeInMillis()) {
+                    long cMillis = c.getTimeInMillis();
+                    long initialDateMillis = initialDate.getTimeInMillis();
+                    
+            		if (cMillis < initialDateMillis) {
                     	Toast myToast = Toast.makeText(baseContext, R.string.wrongDateText, Toast.LENGTH_LONG);
                         myToast.show();
                         return;
