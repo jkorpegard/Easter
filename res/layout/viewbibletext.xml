@@ -9,7 +9,7 @@
         <ImageView style="@style/TitleBarLogo"
             android:id="@+id/vbtHome"
             android:contentDescription="@string/start_header" 
-            android:src="@drawable/eastericon_grey" /> 
+            android:src="@drawable/actionbar_home" /> 
 
         <ImageView style="@style/TitleBarSeparator" />
         
@@ -17,7 +17,7 @@
 
         <ImageView style="@style/TitleBarSeparator" />
         
- 		<TextView style="@style/TitleBarText" android:layout_weight="0" 
+ 		<TextView style="@style/TitleBarClickableText" android:layout_weight="0" 
     	android:id="@+id/viewBibleTextTranslation" 
     	android:text="@string/bibleTranslationShortNET"/>
 

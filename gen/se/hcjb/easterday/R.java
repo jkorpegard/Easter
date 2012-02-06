@@ -38,27 +38,29 @@ public final class R {
         public static final int title_height=0x7f080001;
     }
     public static final class drawable {
-        public static final int background=0x7f020000;
-        public static final int bg_landscape=0x7f020001;
-        public static final int check1=0x7f020002;
-        public static final int eastericon=0x7f020003;
-        public static final int eastericon_grey=0x7f020004;
-        public static final int eastericon_small=0x7f020005;
-        public static final int emptytomb=0x7f020006;
-        public static final int emptytomb_landscape=0x7f020007;
-        public static final int ic_easter=0x7f020008;
-        public static final int ic_media_play=0x7f020009;
-        public static final int ic_media_reverse=0x7f02000a;
-        public static final int icon=0x7f02000b;
-        public static final int icon_church=0x7f02000c;
-        public static final int icon_easter=0x7f02000d;
-        public static final int icon_feedback=0x7f02000e;
-        public static final int icon_hcjb=0x7f02000f;
-        public static final int icon_info=0x7f020010;
-        public static final int icon_nextstep=0x7f020011;
-        public static final int logga=0x7f020012;
-        public static final int logga_s=0x7f020013;
-        public static final int new1=0x7f020014;
+        public static final int actionbar_btn_bg=0x7f020000;
+        public static final int actionbar_home=0x7f020001;
+        public static final int background=0x7f020002;
+        public static final int bg_landscape=0x7f020003;
+        public static final int check1=0x7f020004;
+        public static final int eastericon=0x7f020005;
+        public static final int eastericon_grey=0x7f020006;
+        public static final int eastericon_small=0x7f020007;
+        public static final int emptytomb=0x7f020008;
+        public static final int emptytomb_landscape=0x7f020009;
+        public static final int ic_easter=0x7f02000a;
+        public static final int ic_media_play=0x7f02000b;
+        public static final int ic_media_reverse=0x7f02000c;
+        public static final int icon=0x7f02000d;
+        public static final int icon_church=0x7f02000e;
+        public static final int icon_easter=0x7f02000f;
+        public static final int icon_feedback=0x7f020010;
+        public static final int icon_hcjb=0x7f020011;
+        public static final int icon_info=0x7f020012;
+        public static final int icon_nextstep=0x7f020013;
+        public static final int logga=0x7f020014;
+        public static final int logga_s=0x7f020015;
+        public static final int new1=0x7f020016;
     }
     public static final class id {
         public static final int aboutHeader=0x7f090009;
@@ -200,32 +202,14 @@ public final class R {
         public static final int wrongDateText=0x7f0a0043;
     }
     public static final class style {
-        public static final int HomeButton=0x7f0b0002;
-        /**  Base application theme is the default theme. 
-         */
-        public static final int Theme=0x7f0b0000;
-        /**  Variation on the Light theme that turns off the title 
-         */
-        public static final int Theme_IOSched=0x7f0b0001;
-        public static final int TitleBar=0x7f0b0003;
-        public static final int TitleBarLogo=0x7f0b0006;
-        public static final int TitleBarProgressIndicator=0x7f0b0004;
-        public static final int TitleBarSeparator=0x7f0b0005;
-        public static final int TitleBarSpring=0x7f0b0007;
-        /** 
-        <TextView
-        android:layout_width="wrap_content"
-    	android:layout_height="match_parent" 
-		android:textSize="24sp"
-    	android:textColor="@color/title_text_alt" 
-    	android:gravity="center_vertical" />
-
-        android:layout_marginRight="8dip"
-        android:layout_marginLeft="8dip"
-
-
-         */
-        public static final int TitleBarText=0x7f0b0008;
+        public static final int HomeButton=0x7f0b0000;
+        public static final int TitleBar=0x7f0b0001;
+        public static final int TitleBarClickableText=0x7f0b0007;
+        public static final int TitleBarLogo=0x7f0b0004;
+        public static final int TitleBarProgressIndicator=0x7f0b0002;
+        public static final int TitleBarSeparator=0x7f0b0003;
+        public static final int TitleBarSpring=0x7f0b0005;
+        public static final int TitleBarText=0x7f0b0006;
     }
     public static final class xml {
         public static final int prefs=0x7f040000;

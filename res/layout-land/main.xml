@@ -16,7 +16,7 @@
 		        <ImageView style="@style/TitleBarLogo"
 		            android:id="@+id/vbtHome"
 		            android:contentDescription="@string/start_header" 
-		            android:src="@drawable/eastericon_grey" /> 
+		            android:src="@drawable/actionbar_home" /> 
 		
 		        <ImageView style="@style/TitleBarSeparator" />
 		        
