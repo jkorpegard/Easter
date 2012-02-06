@@ -106,4 +106,7 @@
 	<string name="selectAlertTitle">Välj notifieringstyp</string>
 	<string name="selectAlertSummary">Val av hur mycket notifieringarna för ny bibeltext ska låta.</string>
 	<string name="toastTextNoReset">Påskveckan kan inte startas om när man är nära den riktiga påskveckan.</string>
+	<string name="confirmRestartWeek">Är du säker på att du vill starta om påskveckan?</string>
+	<string name="confirmRestartWeekYes">Ja</string>
+	<string name="confirmRestartWeekNo">Nej</string>
 </resources>

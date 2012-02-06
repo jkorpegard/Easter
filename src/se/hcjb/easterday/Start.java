@@ -4,6 +4,8 @@ package se.hcjb.easterday;
 import java.util.Calendar;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -102,8 +104,24 @@ public class Start extends Activity implements OnClickListener {
     		  Toast.makeText(this, R.string.toastTextNoReset, Toast.LENGTH_LONG).show();
     		  break;
     	  }
-    	  easterApp.bibleTexts.setEasterDate(null);
-    	  this.easterApp.bibleTexts.setAllAsUnRead();
+    	  
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setMessage(R.string.confirmRestartWeek)
+			       .setCancelable(false)
+			       .setPositiveButton(R.string.confirmRestartWeekYes, new DialogInterface.OnClickListener() {
+			           public void onClick(DialogInterface dialog, int id) {
+			         	  easterApp.bibleTexts.setEasterDate(null);
+			        	  easterApp.bibleTexts.setAllAsUnRead();
+			           }
+			       })
+			       .setNegativeButton(R.string.confirmRestartWeekNo, new DialogInterface.OnClickListener() {
+			           public void onClick(DialogInterface dialog, int id) {
+			        	   ; // Do nothing!
+			           }
+			       });
+			AlertDialog alert = builder.create();		
+			alert.show();
+    	  
 		  break;
       }
 

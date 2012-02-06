@@ -141,6 +141,9 @@ public final class R {
         public static final int bibleTranslationShortNET=0x7f0a003c;
         public static final int bibleTranslationShortSFB=0x7f0a003d;
         public static final int change_the_date_btn=0x7f0a003b;
+        public static final int confirmRestartWeek=0x7f0a0047;
+        public static final int confirmRestartWeekNo=0x7f0a0049;
+        public static final int confirmRestartWeekYes=0x7f0a0048;
         public static final int continue_easter_button=0x7f0a000f;
         public static final int enableInsistentModeSummary=0x7f0a0040;
         public static final int feedback_header=0x7f0a002b;

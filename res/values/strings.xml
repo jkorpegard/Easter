@@ -109,4 +109,7 @@
 	<string name="selectAlertTitle">Select alert type</string>
 	<string name="selectAlertSummary">How much the alert for a new text to read should sound.</string>
 	<string name="toastTextNoReset">Easter week can not be reset when close to real Easter week.</string>
+	<string name="confirmRestartWeek">Are you sure you want to restart the Easter Week?</string>
+	<string name="confirmRestartWeekYes">Yes</string>
+	<string name="confirmRestartWeekNo">No</string>
 </resources>
