@@ -98,7 +98,7 @@ public class EasterApplication extends Application {
 		try {
 			nextEventTime = bibleTexts.getNextEventTime(System.currentTimeMillis()+1000)+2000;
 		} catch (Exception e) {
-			Log.e(TAG, "Could not read database; try again in 10 seconds... ");
+			Log.e(TAG, "Could not read database... ");
 			try {
 				bibleTexts.createDatabase(getBaseContext());
 			} catch (IOException e1) {
@@ -149,7 +149,6 @@ public class EasterApplication extends Application {
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context); 
         String alertMode = prefs.getString("alertMode", "2");
-        Log.d(TAG, "Alert mode: " + alertMode);
         if (alertMode.equals("1")) {
 			notification.flags |= Notification.FLAG_INSISTENT;
 			notification.defaults = Notification.DEFAULT_ALL;
@@ -163,9 +162,7 @@ public class EasterApplication extends Application {
         }
         else if (alertMode.equals("3")) {
         	// TODO: Find another sound!
-//    		notification.defaults = Notification.DEFAULT_SOUND;
     		notification.sound = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.pop); 
-    		Log.d(TAG, "notificat.sound = " + notification.sound.toString());
         }
         	
 		notification.flags |= Notification.FLAG_AUTO_CANCEL;

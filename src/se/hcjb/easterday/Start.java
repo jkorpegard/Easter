@@ -128,8 +128,11 @@ public class Start extends Activity implements OnClickListener {
 	    		startActivity(new Intent(this, Easter.class));
 	    	else if (dateSet)
 	    		startActivity(new Intent(this, StartedActivity.class));
-	    	else
-	    		startActivity(new Intent(this, SetDateActivity.class));
+	    	else {
+	    		Intent intent = new Intent(this, SetDateActivity.class);
+	    		intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+	    		startActivity(intent);
+	    	}
     	}
     	else if ((v.getId() == R.id.button3) || ((v.getId() == R.id.vbtActionBarNext) && allRead) ) {
     		if (this.allRead) startActivity(new Intent (this, NextStepActivity.class));
