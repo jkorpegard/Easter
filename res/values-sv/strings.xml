@@ -14,7 +14,7 @@
     <string name="reklmatext5"><a href="http://www.hcjb.se/index.php?id=28">Lyssna på HCJB Global</a></string> 
     <string name="bibleSource">\n\n - Svenska Folkbibeln</string> 
     <string name="bibleSourceNET">\n\n - NET Bible®</string> 
-    <string name="start_easter_button">Starta Påskveckan nu</string> 
+    <string name="start_easter_button">Läs Bibeltexterna</string> 
     <string name="continue_easter_button">Fortsätt Påskveckan</string> 
     <string name="about_hcjb_button">Om HJCB</string> 
     <string name="instructions_button">Instruktioner</string> 
@@ -42,7 +42,7 @@
 	  och Stiftelsen Biblicum, Ljungby.
 	  </string>
 	<string name="help_header">Instruktioner för applikationen</string>
-	<string name="help_text">Starta påskveckan genom att klicka på "Starta påskveckan"-knappen. 
+	<string name="help_text">Starta påskveckan genom att klicka på "Läs Bibeltexterna"-knappen. 
 	  Följ Jesus sista veckan innan Jesu död och uppståndelse. 
 	  Efter det att alla texter har visats och är lästa kommer nya funktioner att aktiveras på startsidan</string>
 	<string name="about_app_button">Om applikationen</string>
@@ -88,7 +88,7 @@
 					vad jag inte kunde göra själv. Nu kommer jag inför dig och ber att du ska ta kontrollen över
 					mitt liv. Jag ger mitt liv till dig. Hjälp mig, varje dag, att tjäna dig. Jag älskar dig
 					Jesus, och jag tackar dig för att jag ska få leva tillsammans med dig i evighet. 
-					\n\nAmen. </string>
+					\n\nAmen.</string>
 	<string name="next_step_popup_ok">OK!</string>
 	<string name="weekday_monday">Måndag</string>
 	<string name="weekday_tuesday">Tisdag</string>

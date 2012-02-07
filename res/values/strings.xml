@@ -14,7 +14,7 @@
     <string name="reklmatext5"><a href="http://www.hcjb.se/index.php?id=28">Listen to HCJB Global</a></string> 
     <string name="bibleSource">\n\n - Svenska Folkbibeln</string> 
     <string name="bibleSourceNET">\n\n - NET Bible®</string> 
-    <string name="start_easter_button">Start Easter week now</string> 
+    <string name="start_easter_button">Read Bible Texts</string> 
     <string name="continue_easter_button">Continue Easter week</string> 
     <string name="about_hcjb_button">About HJCB</string> 
     <string name="instructions_button">Instructions</string> 
@@ -43,7 +43,7 @@
 	  and Stiftelsen Biblicum, Ljungby.
 	  </string>
 	<string name="help_header">Help on the application</string>
-	<string name="help_text">Start easter week by clicking on the start button. Follow Christ the last week before his death and resurrection. Additional features will be unlocked when all texts are read.</string>
+	<string name="help_text">Start easter week by clicking on the "Read Bible Texts" button. Follow Christ the last week before his death and resurrection. Additional features will be unlocked when all texts are read.</string>
 	<string name="about_app_button">About the app</string>
 	<string name="started_header">Application has started</string>
 	<string name="started_text">Application has started, but no text has been displayed yet. Please be patient and wait for the first text to come, it will be notified: </string>
