@@ -6,8 +6,8 @@
     android:layout_height="fill_parent">
 <LinearLayout
 	android:layout_weight="1" 
-	android:layout_width="match_parent"
-	android:layout_height="match_parent" android:orientation="vertical">
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:orientation="vertical">
 		    <LinearLayout style="@style/TitleBar">
 		        <ImageView style="@style/TitleBarLogo"
 		            android:id="@+id/vbtHome"
@@ -28,15 +28,15 @@
     
 		<TextView android:id="@+id/hcjbText" 
 			android:text="@string/find_church_text" 
-			android:layout_height="match_parent" 
-			android:layout_width="match_parent"
+			android:layout_height="fill_parent" 
+			android:layout_width="fill_parent"
 			android:textSize="18sp"></TextView>
 
 </LinearLayout>
 <LinearLayout 
 	android:id="@+id/linearLayout1" 
 	android:layout_height="wrap_content" 
-	android:layout_width="match_parent" 
+	android:layout_width="fill_parent" 
 	android:gravity="center"
     android:background="#fff">
 	

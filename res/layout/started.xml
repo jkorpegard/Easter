@@ -6,8 +6,8 @@
     android:layout_height="fill_parent">
 <LinearLayout
 	android:layout_weight="1" 
-  android:layout_width="match_parent"
-  android:layout_height="match_parent" android:orientation="vertical">
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" android:orientation="vertical">
 		    <LinearLayout style="@style/TitleBar">
 		        <ImageView style="@style/TitleBarLogo"
 		            android:id="@+id/vbtHome"
@@ -30,12 +30,12 @@
   <ScrollView android:id="@+id/scrollView1" 
     	android:layout_height="wrap_content" 
 		android:layout_weight="1" 
-    	android:layout_width="match_parent">
+    	android:layout_width="fill_parent">
         <LinearLayout 
-        	android:layout_width="match_parent" 
+        	android:layout_width="fill_parent" 
         	android:id="@+id/linearLayout2" 
 		    android:orientation="vertical"
-        	android:layout_height="match_parent">
+        	android:layout_height="fill_parent">
 	
 			<TextView android:layout_width="fill_parent" 
 				android:id="@+id/startedText" 
@@ -43,7 +43,7 @@
 				android:textSize="18sp"/>
 				
 			<TextView 
-			    android:layout_width="match_parent" 
+			    android:layout_width="fill_parent" 
 			    android:layout_height="wrap_content" 
 			    android:text="4 days" 
 			    android:id="@+id/textViewNumDays" 
@@ -56,7 +56,7 @@
 <LinearLayout 
 	android:id="@+id/linearLayout1" 
 	android:layout_height="wrap_content" 
-	android:layout_width="match_parent" 
+	android:layout_width="fill_parent" 
 	android:gravity="center"
     android:background="#fff">
 	

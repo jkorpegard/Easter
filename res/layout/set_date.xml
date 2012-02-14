@@ -70,7 +70,7 @@
 <LinearLayout 
 	android:id="@+id/linearLayout1" 
 	android:layout_height="wrap_content" 
-	android:layout_width="match_parent" 
+	android:layout_width="fill_parent" 
 	android:gravity="center"
     android:background="#fff">
 	

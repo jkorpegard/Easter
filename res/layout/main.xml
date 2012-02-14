@@ -40,7 +40,7 @@
 		android:layout_weight="1" 
 		
 		android:id="@android:id/list" 
-		android:layout_width="match_parent"
+		android:layout_width="fill_parent"
 		android:background="#8000"
 		android:cacheColorHint="#00000000" />
 	
@@ -48,7 +48,7 @@
 	<LinearLayout 
 		android:id="@+id/linearLayout1" 
 		android:layout_height="wrap_content" 
-		android:layout_width="match_parent" 
+		android:layout_width="fill_parent" 
 		android:gravity="center"
 	    android:background="#fff">
 		

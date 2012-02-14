@@ -7,11 +7,11 @@
 	<string name="menuRestartWeek">Restart week</string>
     <string name="titleViewBibleTextActivity">Bible text</string> 
     <string name="titleEaster">The Easter with Jesus</string> 
-    <string name="reklmatext1"><a href="http://www.hcjb.se/index.php?id=6">About HCJB Global</a></string> 
-    <string name="reklmatext2"><a href="http://www.hcjb.se/index.php?id=12">HCJB Global Sweden</a></string> 
-    <string name="reklmatext3"><a href="http://www.hcjb.se/">HCJB Global</a></string> 
-    <string name="reklmatext4"><a href="http://www.hcjb.se/index.php?id=26">What is HCJB Global?</a></string> 
-    <string name="reklmatext5"><a href="http://www.hcjb.se/index.php?id=28">Listen to HCJB Global</a></string> 
+    <string name="reklmatext1"><a href="http://www.hcjb.org/">HCJB Global</a></string> 
+    <string name="reklmatext2"><a href="http://www.hcjb.org/">HCJB Global</a></string> 
+    <string name="reklmatext3"><a href="http://www.hcjb.org/">HCJB Global</a></string> 
+    <string name="reklmatext4"><a href="http://www.hcjb.org/">HCJB Global</a></string> 
+    <string name="reklmatext5"><a href="http://www.hcjb.org/">HCJB Global</a></string> 
     <string name="bibleSource">\n\n - Svenska Folkbibeln</string> 
     <string name="bibleSourceNET">\n\n - NET Bible®</string> 
     <string name="start_easter_button">Read Bible Texts</string> 
