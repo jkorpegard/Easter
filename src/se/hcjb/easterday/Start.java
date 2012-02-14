@@ -58,11 +58,13 @@ public class Start extends Activity implements OnClickListener {
     	super.onResume();
 	    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 	    this.allRead = prefs.getBoolean("isAllRead", false);
+        Button v2 = (Button) findViewById(R.id.button2);
         Button v3 = (Button) findViewById(R.id.button3);
         Button v4 = (Button) findViewById(R.id.button4);
         Button v5 = (Button) findViewById(R.id.button5);
         LinearLayout ll0 = (LinearLayout) findViewById(R.id.linearLayout0);
         if (allRead) {
+        	v2.setText(R.string.read_again_easter_button);
         	v3.setText(R.string.start_next_step);   v3.setVisibility(View.VISIBLE);
         	v4.setText(R.string.start_feedback);    v4.setVisibility(View.VISIBLE);
         	v5.setText(R.string.start_find_church); v5.setVisibility(View.VISIBLE);
@@ -75,6 +77,10 @@ public class Start extends Activity implements OnClickListener {
         	v3.setText("Locked"); v3.setVisibility(View.INVISIBLE);
         	v4.setText("Locked"); v4.setVisibility(View.INVISIBLE);
         	v5.setText("Locked"); v5.setVisibility(View.INVISIBLE);
+        	if (easterApp.bibleTexts.getEasterDate() == null)
+        		v2.setText(R.string.start_easter_button);
+        	else
+        		v2.setText(R.string.continue_easter_button);
 			if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
         		ll0.setBackgroundDrawable(getResources().getDrawable(R.drawable.background));
         	else

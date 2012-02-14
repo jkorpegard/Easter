@@ -92,28 +92,28 @@ public class BibleTexts {
 	}
 	
 	public void createDatabase(Context cntxt) throws IOException {
-		Log.d(TAG, "started createDatabase... ");
+//		Log.d(TAG, "started createDatabase... ");
 		  
 		InputStream assetsDB = cntxt.getAssets().open("BibleTexts.db");
-		Log.d(TAG, "Opened source file... "  + assetsDB.toString());
+//		Log.d(TAG, "Opened source file... "  + assetsDB.toString());
 		OutputStream dbOut = new FileOutputStream(DB_DESTINATION);
-		Log.d(TAG, "Opened destination file... " + DB_DESTINATION);
+//		Log.d(TAG, "Opened destination file... " + DB_DESTINATION);
 		
 		byte[] buffer = new byte[1024];
 		int length;
-		Log.d(TAG, "Starting to copy file... ");
+//		Log.d(TAG, "Starting to copy file... ");
 		while ((length = assetsDB.read(buffer))>0){
 			dbOut.write(buffer, 0, length);
 		}
-		Log.d(TAG, "Done copying file... ");
+//		Log.d(TAG, "Done copying file... ");
 		 
 		dbOut.flush();
 		dbOut.close();
 		assetsDB.close();
-		Log.d(TAG, "Closed and flushed all files... ");
+//		Log.d(TAG, "Closed and flushed all files... ");
 		
 		createdNewDatabase = true;
-	    Log.d(TAG, "Set flag createdNewDatabase to true");
+//	    Log.d(TAG, "Set flag createdNewDatabase to true");
 	}
 
 	public void setEasterDate(Calendar newEasterDate) {
@@ -279,7 +279,7 @@ public class BibleTexts {
 
 		@Override
 		public void onCreate(SQLiteDatabase db) {
-			Log.i(TAG, "Creating database: " + DATABASE);
+//			Log.i(TAG, "Creating database: " + DATABASE);
 			
 			// Set correct version number on database if it was just created
 			if (createdNewDatabase == true) {
@@ -291,7 +291,7 @@ public class BibleTexts {
 
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-			Log.d(TAG, "Old version: " + oldVersion + ", New version: " + newVersion);
+//			Log.d(TAG, "Old version: " + oldVersion + ", New version: " + newVersion);
 			this.onCreate(db);
 			try {
 				createDatabase(baseContext);

@@ -14,8 +14,9 @@
     <string name="reklmatext5"><a href="http://www.hcjb.org/">HCJB Global</a></string> 
     <string name="bibleSource">\n\n - Svenska Folkbibeln</string> 
     <string name="bibleSourceNET">\n\n - NET Bible®</string> 
-    <string name="start_easter_button">Read Bible Texts</string> 
-    <string name="continue_easter_button">Continue Easter week</string> 
+    <string name="start_easter_button">Activate Easter Week</string> 
+    <string name="continue_easter_button">Read Bible Texts</string> 
+    <string name="read_again_easter_button">Read Texts Again</string> 
     <string name="about_hcjb_button">About HJCB</string> 
     <string name="instructions_button">Instructions</string> 
     <string name="hcjb_activity_header">About HCJB Global Sweden</string> 
@@ -52,7 +53,7 @@
 	<string name="started_number_days1">in</string>
 	<string name="started_number_days2">days...</string>
 	<string name="set_date_header">Set date...</string>
-	<string name="set_date_text">Please set the date for when Easter day; preferably next coming Sunday.
+	<string name="set_date_text">Please set the date for Easter day; preferably next coming Sunday.
 		\nThe first text will be displayed one week before the selected date.
 		\n\nEaster day date:</string>
 	<string name="set_date_button_next">Start easter week!</string>
@@ -69,7 +70,7 @@
 	  \n2. Find a church, and tell others about your faith! 
 	  \n3. Share with us that you have received Christ!</string>
 	<string name="find_church_header">Find a church near you!</string>
-	<string name="find_church_text">Click on one of the links... \n\n<a href="http://www.kyrktorget.se/">Kyrktorget</a>\n<a href="http://www.alliansmissionen.se/">Svenska Alliansmissionen</a>\n<a href="http://www.efk.se/">EFK</a>\n<a href="http://www.svenskakyrkan.se/">Svenska Kyrkan</a></string>
+	<string name="find_church_text">Please contact HCJB Global if you need assistance in finding a church: <a href="mailto:info@hcjb.org">info@hcjb.org</a></string>
 	<string name="feedback_header">Send Feedback!</string>
 	<string name="feedback_text">Tell us at HCJB Global Sweden if this application has been helpful for you in your relation to Christ.\n
 		\n<a href="mailto:android@hcjb.se?Subject=Android+app+feedback">Send Feedback!</a></string>

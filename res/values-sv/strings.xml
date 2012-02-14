@@ -14,8 +14,9 @@
     <string name="reklmatext5"><a href="http://www.hcjb.se/index.php?id=28">Lyssna på HCJB Global</a></string> 
     <string name="bibleSource">\n\n - Svenska Folkbibeln</string> 
     <string name="bibleSourceNET">\n\n - NET Bible®</string> 
-    <string name="start_easter_button">Läs Bibeltexterna</string> 
-    <string name="continue_easter_button">Fortsätt Påskveckan</string> 
+    <string name="start_easter_button">Aktivera Påskveckan</string> 
+    <string name="continue_easter_button">Läs Bibeltexterna</string> 
+    <string name="read_again_easter_button">Läs Texterna Igen</string> 
     <string name="about_hcjb_button">Om HJCB</string> 
     <string name="instructions_button">Instruktioner</string> 
     <string name="hcjb_activity_header">Om HCJB Global Sweden</string> 
