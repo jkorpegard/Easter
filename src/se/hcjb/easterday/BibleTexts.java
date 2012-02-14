@@ -209,8 +209,10 @@ public class BibleTexts {
 
     	Calendar now = Calendar.getInstance();
     	Calendar nextEasterDay = getNextEasterDay(now.getTime());
-    	if ((nextEasterDay.getTimeInMillis() - now.getTimeInMillis()) < (EasterApplication.DAY_IN_MILLIS * 20)) // three weeks before Easter
-    		this.setEasterDate(nextEasterDay);
+    	if ((nextEasterDay.getTimeInMillis() - now.getTimeInMillis()) < (EasterApplication.DAY_IN_MILLIS * 20)) { // three weeks before Easter
+    		setEasterDate(nextEasterDay);
+    		setAllAsUnRead();
+    	}
     	
 		return currentTime + (EasterApplication.DAY_IN_MILLIS); // Wait LONG time; until tomorrow!
 		
