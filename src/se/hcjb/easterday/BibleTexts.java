@@ -249,8 +249,6 @@ public class BibleTexts {
 
 	static final int VERSION = 1;
 	static final String DATABASE = "BibleTexts.db";
-	static final String TABLE_VIEW = "all_texts";
-	static final String TABLE_VIEW_EN = "all_texts_en";
 	static final String TABLE_NAME= "timedtext";
 
 	public static final String C_ID = "_id";
@@ -263,7 +261,6 @@ public class BibleTexts {
 	public static final String C_LOCATION_TEXT = "LOCATION_TEXT";
 	public static final String C_READ = "READ";
 	public static final String C_TIMESTAMP = "TIMESTAMP";
-//	public static final String C_DATESTRING= "DATESTRING"; // TODO: Remove DATESTRING from database!!!
 	public static final String C_BIBLE_LOC= "BIBLE_LOC";
 
 	private static final String[] DB_TEXT_COLUMNS = { C_TEXT, C_READ, C_DAY, C_HOUR, C_MINUTE, C_BOOK_NAME, C_CHAP_VERSE, C_LOCATION_TEXT, C_ID, C_BIBLE_LOC };
@@ -330,7 +327,7 @@ public class BibleTexts {
 		  long currentTimeRel = getCurrentTimeRel_DSTcomp(currentTime);
 		  SQLiteDatabase db = this.dbHelper.getReadableDatabase();
 		  String[] selectColumns = { C_TIMESTAMP, C_HOUR };
-		  return db.query(true, getTableViewName(),  selectColumns, "TIMESTAMP > " + currentTimeRel, null, null, null, C_TIMESTAMP, "1");
+		  return db.query(true, TABLE_NAME,  selectColumns, "TIMESTAMP > " + currentTimeRel, null, null, null, C_TIMESTAMP, "1");
 	  }
 
 
@@ -350,32 +347,40 @@ public class BibleTexts {
 				return context.getString(R.string.bibleTranslationShortNET);
 		}
 
-	  
-	  private String getTableViewName() {
-
-		  if (getTranslation() == EasterApplication.TRANSLATION_SFB)
-			  return TABLE_VIEW;
-		  else
-			  return TABLE_VIEW_EN;
-	  }
 
 
 	  private String[] getDbTextColumns() {
 		  return DB_TEXT_COLUMNS;
 	  }
 	  
+	  
 	/**
 	   *
 	   * @return Cursor where the columns are _id, created_at, user, txt
 	   */
 	  public Cursor getBibleTextsById(int id) {  
-	    SQLiteDatabase db = this.dbHelper.getReadableDatabase();
-	    return db.query(getTableViewName(),  getDbTextColumns() , C_ID + " = " + id, null, null, null, C_TIMESTAMP); 
+	    return db_query(getDbTextColumns() , C_ID + " = " + id); 
 	  } 
 
+	private Cursor db_query(String[] columns, String select) {
+	    SQLiteDatabase db = this.dbHelper.getReadableDatabase();
+	    String sql_string;
+	    if (getTranslation() == EasterApplication.TRANSLATION_SFB) {
+		    sql_string = "select _id, DAY, HOUR, MINUTE, biblebooks.BOOK_NAME, CHAP_VERSE, TEXT, locations.LOCATION_TEXT, READ, TIMESTAMP, BIBLE_LOC " + 
+		    			"from timedtext left join locations on timedtext.LOCATION_ID = locations.LOCATION_ID left join biblebooks on timedtext.BOOK_ID = biblebooks.BOOK_ID " +
+		    			"WHERE " + select + " ORDER BY " + C_TIMESTAMP; 
+	    }
+	    else {
+		    sql_string = "select _id, DAY, HOUR, MINUTE, biblebooks.BOOK_NAME_EN AS BOOK_NAME, CHAP_VERSE, TEXT_EN AS TEXT, locations.LOCATION_TEXT_EN AS LOCATION_TEXT, READ, TIMESTAMP, BIBLE_LOC " +
+			"from timedtext left join locations on timedtext.LOCATION_ID = locations.LOCATION_ID left join biblebooks on timedtext.BOOK_ID = biblebooks.BOOK_ID " +
+			"WHERE " + select + " ORDER BY " + C_TIMESTAMP;
+	    }
+	    return db.rawQuery(sql_string, null);
+//	    return db.query(getTableViewName(),  columns , select, null, null, null, C_TIMESTAMP); 
+	}
+
 	public Cursor getPrevBibleTextsById(int id) {
-		  SQLiteDatabase db = this.dbHelper.getReadableDatabase();
-		  Cursor tmpCursor = db.query(getTableViewName(),  getDbTextColumns(), C_ID + " < " + id, null, null, null, C_TIMESTAMP); 
+		  Cursor tmpCursor = db_query(getDbTextColumns(), C_ID + " < " + id); 
 		  if (tmpCursor != null && tmpCursor.getCount() > 0) {
 			  return tmpCursor;
 		  }
@@ -383,8 +388,7 @@ public class BibleTexts {
 	  }
 
 	  public Cursor getNextBibleTextsById(int id) {
-		  SQLiteDatabase db = this.dbHelper.getReadableDatabase();
-		  Cursor tmpCursor = db.query(getTableViewName(),  getDbTextColumns(), C_ID + " > " + id, null, null, null, C_TIMESTAMP); 
+		  Cursor tmpCursor = db_query(getDbTextColumns(), C_ID + " > " + id); 
 		  if (tmpCursor != null && tmpCursor.getCount() > 0) {
 			  return tmpCursor;
 		  }
@@ -398,9 +402,8 @@ public class BibleTexts {
 	   */
 	  public Cursor getAllBibleTexts(long now) { 
 	    try {
-			SQLiteDatabase db = this.dbHelper.getReadableDatabase();
 			long currentTimeRel = getCurrentTimeRel_DSTcomp(now);
-			return db.query(getTableViewName(),  getDbTextColumns(), "TIMESTAMP < " + currentTimeRel, null, null, null, C_TIMESTAMP);
+			return db_query(getDbTextColumns(), "TIMESTAMP < " + currentTimeRel);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -429,7 +432,7 @@ public class BibleTexts {
 	public boolean isAllRead() {
 		SQLiteDatabase db = this.dbHelper.getReadableDatabase();
 		String[] selectColumns = { C_TIMESTAMP, C_HOUR, C_READ };
-		Cursor cur=db.query(true, getTableViewName(),  selectColumns, C_READ + " == 0", null, null, null, C_TIMESTAMP, "1");
+		Cursor cur=db.query(true, TABLE_NAME,  selectColumns, C_READ + " == 0", null, null, null, C_TIMESTAMP, "1");
 		if (cur != null) {
 			int count = cur.getCount();
 			cur.close();
@@ -443,11 +446,10 @@ public class BibleTexts {
 
 	public boolean isAllReadNow() {
 		long now = Calendar.getInstance().getTimeInMillis();
-		SQLiteDatabase db = this.dbHelper.getReadableDatabase();
 	    long currentTimeRel = getCurrentTimeRel_DSTcomp(now); 
 	    
 		String[] selectColumns = { C_TIMESTAMP, C_HOUR, C_READ };
-	    Cursor cur = db.query(getTableViewName(),  selectColumns, "TIMESTAMP < " + currentTimeRel + " AND " + C_READ + " == 0", null, null, null, C_TIMESTAMP); 
+	    Cursor cur = db_query(selectColumns, "TIMESTAMP < " + currentTimeRel + " AND " + C_READ + " == 0"); 
 		
 		if (cur != null) {
 			int count = cur.getCount();
