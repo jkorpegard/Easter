@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">The Easter with Christ</string>
+    <string name="hello">Easter with Christ</string>
     <string name="app_name">Live with Christ</string> 
     <string name="titlePrefs">Settings</string> 
     <string name="prefsMenuTitle">Settings</string> 
 	<string name="menuRestartWeek">Restart week</string>
     <string name="titleViewBibleTextActivity">Bible text</string> 
-    <string name="titleEaster">The Easter with Jesus</string> 
+    <string name="titleEaster">Easter with Jesus</string> 
     <string name="reklmatext1"><a href="http://www.hcjb.org/">HCJB Global</a></string> 
     <string name="reklmatext2"><a href="http://www.hcjb.org/">HCJB Global</a></string> 
     <string name="reklmatext3"><a href="http://www.hcjb.org/">HCJB Global</a></string> 
@@ -26,13 +26,13 @@
       \nRead more about <a href="http://www.hcjb.org">HCJB Global</a></string>
 	<string name="about_header">About the Application</string>
 	<string name="about_text">This application is a completely new way to read the Bible, created by HCJB Global Sweden.
-	  \n\nWhen the Eastern Week is started (either manually by setting a date, or waiting for the real Eastern week to begins), 
+	  \n\nWhen Easter Week is started (either manually by setting a date, or waiting for the real Easter week to begins), 
 	  you will follow Christ in real time from when he enters Jerusalem until he meets his followers after the resurrection.
-	  Bible texts from all four gospels are notified during the days (and nights!) until Eastern Day. 
+	  Bible texts from all four gospels are notified during the days (and nights!) until Easter Day. 
 	  Please expect that you have to spend some time together with this application to follow Christ this week; More
 	  than one hundred bible texts will be notified and displayed!
 	  \n\nOnce all the bible texts are read, additional features are unlocked on the start screen.
-	  \n\nThis application has been made to bring the suffering and sacrifice of Christ to mind during the Eastern week.
+	  \n\nThis application has been made to bring the suffering and sacrifice of Christ to mind during Easter week.
 	  \n\nThe background image is a painting by Diego Velázquez, available as Public Domain picture from Wikipedia.
 	  \n\nThe origin of the background photo (empty tomb) is unknown.
 	  \n\nBible texts are from Svenska Folkbibeln (Swedish) and the NET Bible (English).
@@ -110,7 +110,7 @@
 	<string name="selectAlertTitle">Select alert type</string>
 	<string name="selectAlertSummary">How much the alert for a new text to read should sound.</string>
 	<string name="toastTextNoReset">Easter week can not be reset when close to real Easter week.</string>
-	<string name="confirmRestartWeek">Are you sure you want to restart the Easter Week?</string>
+	<string name="confirmRestartWeek">Are you sure you want to restart Easter Week?</string>
 	<string name="confirmRestartWeekYes">Yes</string>
 	<string name="confirmRestartWeekNo">No</string>
 </resources>

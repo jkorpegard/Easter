@@ -17,7 +17,7 @@
     <string name="start_easter_button">Aktivera Påskveckan</string> 
     <string name="continue_easter_button">Läs Bibeltexterna</string> 
     <string name="read_again_easter_button">Läs Texterna Igen</string> 
-    <string name="about_hcjb_button">Om HJCB</string> 
+    <string name="about_hcjb_button">Om HCJB</string> 
     <string name="instructions_button">Instruktioner</string> 
     <string name="hcjb_activity_header">Om HCJB Global Sweden</string> 
     <string name="hcjb_activity_text">HCJB Global Sweden är en förening som verkar för att sprida budskapet om Jesus till alla människor, och är en del av missionsorganisationen HCJB Global.
@@ -79,7 +79,7 @@
 	<string name="alert_last_text_text">Nu är alla texter lästa. Nya funktioner är tillgängliga på startsidan.</string>
 	<string name="next_step_btn_pray">Be Frälsningsbönen!</string>
 	<string name="next_step_btn_find_church">Hitta en församling!</string>
-	<string name="next_step_btn_feedback">Berätta för andra!</string>
+	<string name="next_step_btn_feedback">Återkoppling!</string>
 	<string name="next_step_salvation_prayer">Be, högt, med egna ord för din frälsning. Orden är inte det viktiga,
 					det som är viktigt är ditt hjärtas längtan efter att ge ditt till Jesus. Om du inte vet
 					hur du ska be så kan be den här bönen;
